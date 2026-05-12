@@ -566,6 +566,80 @@
       font-size: 0.8rem;
     }
 
+    /* ── REVIEWS ── */
+    #reviews {
+      background: rgba(255,255,255,0.025);
+      border-top: 1px solid rgba(94,200,229,0.08);
+      border-bottom: 1px solid rgba(94,200,229,0.08);
+      padding: 6rem 2rem;
+    }
+    .reviews-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .reviews-sub {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin: 0.5rem auto 3rem;
+      max-width: 480px;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(94,200,229,0.12);
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .review-card:hover {
+      border-color: rgba(232,57,122,0.3);
+      transform: translateY(-3px);
+    }
+    .review-stars {
+      color: var(--hot-pink);
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+    .review-text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+      flex: 1;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .review-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--hot-pink), var(--sky-blue));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+    .review-detail {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      margin-top: 0.1rem;
+    }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -707,6 +781,122 @@
     </div>
   </div>
 
+  <!-- BOOKING -->
+  <div id="booking">
+    <div class="inner">
+      <div class="booking-info">
+        <div class="section-label">Ready to Relax?</div>
+        <h2 class="section-title">Book Your <span class="accent">Session</span></h2>
+        <p>Fill out the form and we'll confirm your appointment within a few hours. All sessions require a deposit at time of booking.</p>
+        <ul class="booking-features">
+          <li>We travel to your home, hotel, or workplace</li>
+          <li>Fully equipped — table, linens, and supplies included</li>
+          <li>Secure payment powered by Square</li>
+          <li>Easy rescheduling up to 24 hours before</li>
+          <li>Gift cards redeemable at checkout</li>
+        </ul>
+      </div>
+
+      <div class="booking-form-card">
+        <h3>Book Your Session</h3>
+
+        <!-- Start Square Appointments Embed Code -->
+        <script src='https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y.js'></script>
+        <!-- End Square Appointments Embed Code -->
+
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">Prefer to open in a new tab?</p>
+          <a style="background-color: var(--hot-pink); color: white; height: 40px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; letter-spacing: 1px; line-height: 38px; padding: 0 28px; border-radius: 40px; font-weight: 500; font-size: 14px; cursor: pointer; display: inline-block; text-decoration: none;" href="https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y">Book an appointment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div id="reviews">
+    <div class="reviews-inner">
+      <div class="section-label" style="text-align:center;">Client Love</div>
+      <h2 class="section-title" style="text-align:center;">What People Are <span class="accent">Saying</span></h2>
+      <p class="reviews-sub">Real words from real clients who let Kara bring the table to them.</p>
+
+      <div class="reviews-grid">
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Kara is absolutely incredible. I've had massages at fancy spas and nothing compares to the experience she provides in the comfort of my own home. She's intuitive, skilled, and genuinely cares about how you feel when you leave. I'm a client for life."</p>
+          <div class="review-author">
+            <div class="review-avatar">SM</div>
+            <div>
+              <div class="review-name">Sarah M.</div>
+              <div class="review-detail">Deep Tissue · Atlanta, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I booked Kara for a bachelorette party and she was an absolute hit. Every single one of my girls said it was the best part of the whole weekend. Professional, warm, and so talented. We're already planning to book her again."</p>
+          <div class="review-author">
+            <div class="review-avatar">JL</div>
+            <div>
+              <div class="review-name">Jessica L.</div>
+              <div class="review-detail">Event Booking · Decatur, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"As someone who's been dealing with chronic back pain for years, finding Kara was a game changer. She really listened to what I needed and targeted exactly the right spots. The fact that she comes to me makes it so easy to actually keep up with my sessions."</p>
+          <div class="review-author">
+            <div class="review-avatar">TR</div>
+            <div>
+              <div class="review-name">Tyler R.</div>
+              <div class="review-detail">Deep Tissue · Regular Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I got a prenatal massage from Kara during my third trimester and it was pure heaven. She made me feel completely safe and comfortable the whole time. I cried a little after because I felt so good — in the best way possible. 10 out of 10."</p>
+          <div class="review-author">
+            <div class="review-avatar">AB</div>
+            <div>
+              <div class="review-name">Ashley B.</div>
+              <div class="review-detail">Prenatal Massage · Marietta, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Kara brought the most relaxing experience right to my hotel room after a long work conference. I didn't have to go anywhere, and she set the whole mood — music, ambiance, everything. It was exactly what I needed. Will definitely be booking again next time I'm in town."</p>
+          <div class="review-author">
+            <div class="review-avatar">MK</div>
+            <div>
+              <div class="review-name">Michelle K.</div>
+              <div class="review-detail">Swedish Massage · Hotel Visit</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I bought a gift card for my mom's birthday and she hasn't stopped talking about how amazing Kara was. She said it was the most thoughtful gift she's ever received. Nomad Kneads gift cards are my go-to for every occasion now."</p>
+          <div class="review-author">
+            <div class="review-avatar">DN</div>
+            <div>
+              <div class="review-name">Dana N.</div>
+              <div class="review-detail">Gift Card · Swedish Massage</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- GIFT CARDS -->
   <section id="gift-cards">
     <div class="section-label">Give the Gift of Wellness</div>
@@ -738,48 +928,6 @@
     </div>
   </section>
 
-  <!-- BOOKING -->
-  <div id="booking">
-    <div class="inner">
-      <div class="booking-info">
-        <div class="section-label">Ready to Relax?</div>
-        <h2 class="section-title">Book Your <span class="accent">Session</span></h2>
-        <p>Fill out the form and we'll confirm your appointment within a few hours. All sessions require a deposit at time of booking.</p>
-        <ul class="booking-features">
-          <li>We travel to your home, hotel, or workplace</li>
-          <li>Fully equipped — table, linens, and supplies included</li>
-          <li>Secure payment powered by Square</li>
-          <li>Easy rescheduling up to 24 hours before</li>
-          <li>Gift cards redeemable at checkout</li>
-        </ul>
-      </div>
-
-      <div class="booking-form-card">
-        <h3>Book Your Session</h3>
-
-        <!-- ============================================================
-             SQUARE APPOINTMENTS EMBED
-             How to get your embed code:
-             1. Go to Square Dashboard → Appointments → Online Booking
-             2. Click "Share" → "Embed on a website"
-             3. Copy the <iframe> or <script> snippet Square gives you
-             4. Paste it here, replacing the placeholder block below
-             ============================================================ -->
-
-        <!-- Start Square Appointments Embed Code -->
-        <script src='https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y.js'></script>
-        <!-- End Square Appointments Embed Code -->
-
-        <div style="margin-top: 1.5rem; text-align: center;">
-          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">Prefer to open in a new tab?</p>
-          <!-- Start Square Appointments Embed code -->
-          <a style="background-color: var(--hot-pink); color: white; height: 40px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; letter-spacing: 1px; line-height: 38px; padding: 0 28px; border-radius: 40px; font-weight: 500; font-size: 14px; cursor: pointer; display: inline-block; text-decoration: none;" href="https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y">Book an appointment</a>
-          <!-- End Square Appointments Embed code -->
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Nomad <span>Kneads</span></div>
@@ -787,6 +935,7 @@
     <div class="footer-links">
       <a href="#services">Services</a>
       <a href="#how-it-works">How It Works</a>
+      <a href="#reviews">Reviews</a>
       <a href="#gift-cards">Gift Cards</a>
       <a href="#booking">Book Now</a>
       <a href="mailto:hello@nomadkneads.com">Contact</a>
