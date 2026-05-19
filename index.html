@@ -30,7 +30,7 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -73,7 +73,7 @@
     }
     .nav-cta:hover { background: #c8286a !important; transform: translateY(-1px); color: white !important; }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex; flex-direction: column;
@@ -175,7 +175,7 @@
     }
     .btn-outline:hover { background: rgba(94,200,229,0.1); transform: translateY(-2px); }
 
-    /* ── SECTION SHARED ── */
+    /* SECTION SHARED */
     section {
       padding: 6rem 2rem;
       max-width: 1100px;
@@ -202,7 +202,7 @@
     .section-title .accent { color: var(--hot-pink); }
     .section-title .blue-accent { color: var(--sky-blue); }
 
-    /* ── SERVICES ── */
+    /* SERVICES */
     #services { padding-top: 5rem; }
 
     .services-intro {
@@ -280,7 +280,7 @@
       letter-spacing: 0.04em;
     }
 
-    /* ── HOW IT WORKS ── */
+    /* HOW IT WORKS */
     #how-it-works {
       background: rgba(255,255,255,0.025);
       border-top: 1px solid rgba(94,200,229,0.08);
@@ -300,9 +300,7 @@
       margin-top: 3rem;
     }
 
-    .step {
-      text-align: center;
-    }
+    .step { text-align: center; }
 
     .step-num {
       width: 56px; height: 56px;
@@ -328,7 +326,7 @@
       line-height: 1.65;
     }
 
-    /* ── GIFT CARDS ── */
+    /* GIFT CARDS */
     #gift-cards { max-width: 1100px; }
 
     .gift-card-wrapper {
@@ -410,7 +408,7 @@
       font-weight: 500;
     }
 
-    /* ── BOOKING ── */
+    /* BOOKING */
     #booking {
       max-width: 100%;
       background: var(--navy);
@@ -469,9 +467,7 @@
       gap: 1rem;
     }
 
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
+    .form-group { margin-bottom: 1.2rem; }
 
     .form-group label {
       display: block;
@@ -499,9 +495,7 @@
     }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--sky-blue);
-    }
+    .form-group textarea:focus { border-color: var(--sky-blue); }
     .form-group select option { background: var(--navy); }
     .form-group textarea { resize: vertical; min-height: 80px; }
 
@@ -522,7 +516,7 @@
     }
     .btn-book:hover { background: #c8286a; transform: translateY(-1px); }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       border-top: 1px solid rgba(255,255,255,0.07);
       padding: 3.5rem 2rem;
@@ -566,7 +560,7 @@
       font-size: 0.8rem;
     }
 
-    /* ── REVIEWS ── */
+    /* REVIEWS */
     #reviews {
       background: rgba(255,255,255,0.025);
       border-top: 1px solid rgba(94,200,229,0.08);
@@ -640,13 +634,13 @@
       margin-top: 0.1rem;
     }
 
-    /* ── ANIMATIONS ── */
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav ul { display: none; }
       .services-intro { grid-template-columns: 1fr; }
@@ -675,7 +669,7 @@
     <div class="hero-bg-circle c1"></div>
     <div class="hero-bg-circle c2"></div>
 
-    <div class="hero-tag">✦ Mobile Massage & Wellness</div>
+    <div class="hero-tag">&#10022; Mobile Massage &amp; Wellness</div>
 
     <h1>
       Wellness<br />
@@ -683,7 +677,7 @@
     </h1>
 
     <p class="hero-sub">
-      Professional massage therapy delivered to your home, office, or event. No commute, no waiting room — just pure relaxation, on your schedule.
+      Professional massage therapy delivered to your home, office, or event. No commute, no waiting room &mdash; just pure relaxation, on your schedule.
     </p>
 
     <div class="hero-btns">
@@ -710,40 +704,40 @@
         <div class="service-icon">🌊</div>
         <div class="service-name">Swedish Massage</div>
         <p class="service-desc">Gentle, flowing strokes to melt away tension and improve circulation. Perfect for relaxation and stress relief.</p>
-        <div class="service-price">60 min · 90 min · 120 min</div>
+        <div class="service-price">60 min &middot; 90 min</div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🔥</div>
         <div class="service-name">Deep Tissue</div>
         <p class="service-desc">Targeted pressure to release chronic muscle tension and knots. Ideal for athletes and those with persistent pain.</p>
-        <div class="service-price">60 min · 90 min · 120 min</div>
+        <div class="service-price">60 min &middot; 90 min</div>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">🤰</div>
-        <div class="service-name">Prenatal Massage</div>
-        <p class="service-desc">Safe, specialized therapy designed for expectant mothers to relieve discomfort and promote wellbeing. Available for 2nd and 3rd trimester only.</p>
-        <div class="service-price">60 min · 90 min</div>
+        <div class="service-icon">😮</div>
+        <div class="service-name">TMJ Massage</div>
+        <p class="service-desc">Specialized intraoral and facial massage to relieve jaw tension, headaches, and TMJ dysfunction. A targeted treatment for anyone dealing with jaw pain or teeth grinding.</p>
+        <div class="service-price">60 min &middot; 90 min</div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">⚡</div>
         <div class="service-name">Sports Recovery</div>
         <p class="service-desc">Targeted techniques to boost recovery, enhance performance, and keep you moving at your best after training or events.</p>
-        <div class="service-price">60 min · 90 min · 120 min</div>
+        <div class="service-price">60 min &middot; 90 min</div>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">🪨</div>
-        <div class="service-name">Hot Stone Massage</div>
-        <p class="service-desc">Smooth heated stones are used to relax muscles deeply and improve energy flow — deeply grounding and indulgent.</p>
-        <div class="service-price">90 min · 120 min</div>
+        <div class="service-icon">🦶</div>
+        <div class="service-name">Reflexology</div>
+        <p class="service-desc">Targeted pressure applied to specific points on the feet and hands that correspond to organs and systems throughout the body. Deeply relaxing and great for overall wellness.</p>
+        <div class="service-price">60 min &middot; 90 min</div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🎉</div>
-        <div class="service-name">Events & Parties</div>
+        <div class="service-name">Events &amp; Parties</div>
         <p class="service-desc">Chair massage stations or full setups for corporate events, bachelorette parties, wellness days, and more.</p>
         <div class="service-price">Contact for pricing</div>
       </div>
@@ -764,17 +758,17 @@
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <h3>Book & Pay Online</h3>
+          <h3>Book &amp; Pay Online</h3>
           <p>Select your date and time, enter your location, and securely complete payment to confirm.</p>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <h3>We Come to You</h3>
-          <p>Your therapist arrives with everything needed — table, linens, music, and ambiance included.</p>
+          <p>Your therapist arrives with everything needed &mdash; table, linens, music, and ambiance included.</p>
         </div>
         <div class="step">
           <div class="step-num">4</div>
-          <h3>Relax & Recover</h3>
+          <h3>Relax &amp; Recover</h3>
           <p>Enjoy a fully customized session without leaving the comfort of your own space.</p>
         </div>
       </div>
@@ -790,7 +784,7 @@
         <p>Fill out the form and we'll confirm your appointment within a few hours. All sessions require a deposit at time of booking.</p>
         <ul class="booking-features">
           <li>We travel to your home, office, or workplace</li>
-          <li>Fully equipped — table, linens, and supplies included</li>
+          <li>Fully equipped &mdash; table, linens, and supplies included</li>
           <li>Secure payment powered by Square</li>
           <li>Easy rescheduling up to 24 hours before</li>
           <li>Gift cards redeemable at checkout</li>
@@ -809,7 +803,7 @@
           <a style="background-color: var(--hot-pink); color: white; height: 40px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; letter-spacing: 1px; line-height: 38px; padding: 0 28px; border-radius: 40px; font-weight: 500; font-size: 14px; cursor: pointer; display: inline-block; text-decoration: none;" href="https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y">Book an appointment</a>
         </div>
 
-        <!-- SMS OPT-IN FORM - Required for 10DLC registration -->
+        <!-- SMS OPT-IN FORM -->
         <div style="margin-top:2rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.8rem;">
           <p style="font-size:0.82rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.2rem;">Stay in Touch / SMS Updates</p>
 
@@ -854,73 +848,73 @@
       <div class="reviews-grid">
 
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="review-text">"Kara is absolutely incredible. I've had massages at fancy spas and nothing compares to the experience she provides in the comfort of my own home. She's intuitive, skilled, and genuinely cares about how you feel when you leave. I'm a client for life."</p>
           <div class="review-author">
             <div class="review-avatar">SM</div>
             <div>
               <div class="review-name">Sarah M.</div>
-              <div class="review-detail">Deep Tissue · Atlanta, GA</div>
+              <div class="review-detail">Deep Tissue &middot; Atlanta, GA</div>
             </div>
           </div>
         </div>
 
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="review-text">"I booked Kara for a bachelorette party and she was an absolute hit. Every single one of my girls said it was the best part of the whole weekend. Professional, warm, and so talented. We're already planning to book her again."</p>
           <div class="review-author">
             <div class="review-avatar">JL</div>
             <div>
               <div class="review-name">Jessica L.</div>
-              <div class="review-detail">Event Booking · Decatur, GA</div>
+              <div class="review-detail">Event Booking &middot; Decatur, GA</div>
             </div>
           </div>
         </div>
 
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="review-text">"As someone who's been dealing with chronic back pain for years, finding Kara was a game changer. She really listened to what I needed and targeted exactly the right spots. The fact that she comes to me makes it so easy to actually keep up with my sessions."</p>
           <div class="review-author">
             <div class="review-avatar">TR</div>
             <div>
               <div class="review-name">Tyler R.</div>
-              <div class="review-detail">Deep Tissue · Regular Client</div>
+              <div class="review-detail">Deep Tissue &middot; Regular Client</div>
             </div>
           </div>
         </div>
 
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"I got a prenatal massage from Kara during my third trimester and it was pure heaven. She made me feel completely safe and comfortable the whole time. I cried a little after because I felt so good — in the best way possible. 10 out of 10."</p>
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"I got a prenatal massage from Kara during my third trimester and it was pure heaven. She made me feel completely safe and comfortable the whole time. I cried a little after because I felt so good &mdash; in the best way possible. 10 out of 10."</p>
           <div class="review-author">
             <div class="review-avatar">AB</div>
             <div>
               <div class="review-name">Ashley B.</div>
-              <div class="review-detail">Prenatal Massage · Marietta, GA</div>
+              <div class="review-detail">Prenatal Massage &middot; Marietta, GA</div>
             </div>
           </div>
         </div>
 
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Kara came to our office after a brutal week and gave the most incredible massage session for our whole team. Everyone was blown away — people were practically melting into their chairs afterward. We're making this a monthly thing for sure."</p>
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Kara came to our office after a brutal week and gave the most incredible massage session for our whole team. Everyone was blown away &mdash; people were practically melting into their chairs afterward. We're making this a monthly thing for sure."</p>
           <div class="review-author">
             <div class="review-avatar">MK</div>
             <div>
               <div class="review-name">Michelle K.</div>
-              <div class="review-detail">Swedish Massage · Office Visit</div>
+              <div class="review-detail">Swedish Massage &middot; Office Visit</div>
             </div>
           </div>
         </div>
 
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="review-text">"I bought a gift card for my mom's birthday and she hasn't stopped talking about how amazing Kara was. She said it was the most thoughtful gift she's ever received. Nomad Kneads gift cards are my go-to for every occasion now."</p>
           <div class="review-author">
             <div class="review-avatar">DN</div>
             <div>
               <div class="review-name">Dana N.</div>
-              <div class="review-detail">Gift Card · Swedish Massage</div>
+              <div class="review-detail">Gift Card &middot; Swedish Massage</div>
             </div>
           </div>
         </div>
@@ -936,10 +930,10 @@
 
     <div class="gift-card-wrapper">
       <div class="gift-visual">
-        <div class="gv-label">✦ Nomad Kneads</div>
+        <div class="gv-label">&#10022; Nomad Kneads</div>
         <div class="gv-name">Gift Card</div>
         <div class="gv-amount">$100</div>
-        <div class="gv-note">Mobile Massage & Wellness · Valid for any service</div>
+        <div class="gv-note">Mobile Massage &amp; Wellness &middot; Valid for any service</div>
       </div>
 
       <div class="gift-info">
@@ -954,7 +948,7 @@
         </div>
         <a href="https://app.squareup.com/gift/MLS33NHF0WFSE/order" class="btn-primary" target="_blank" rel="noopener">Purchase a Gift Card via Square</a>
         <p style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-muted);">
-          You'll get your digital gift card instantly by email — redeemable when booking any service.
+          You'll get your digital gift card instantly by email &mdash; redeemable when booking any service.
         </p>
       </div>
     </div>
@@ -963,7 +957,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Nomad <span>Kneads</span></div>
-    <div class="footer-tagline">Mobile Massage & Wellness</div>
+    <div class="footer-tagline">Mobile Massage &amp; Wellness</div>
     <div class="footer-links">
       <a href="#services">Services</a>
       <a href="#how-it-works">How It Works</a>
@@ -973,7 +967,7 @@
       <a href="mailto:hello@nomadkneads.com">Contact</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
-    <div class="footer-copy">© 2025 Nomad Kneads · All rights reserved</div>
+    <div class="footer-copy">&copy; 2025 Nomad Kneads &middot; All rights reserved</div>
   </footer>
 
 </body>
