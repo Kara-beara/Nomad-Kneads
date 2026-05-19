@@ -3,57 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy & SMS Terms – Nomad Kneads</title>
+  <title>Nomad Kneads – Mobile Massage & Wellness</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
       --hot-pink: #e8397a;
       --sky-blue: #5ec8e5;
       --navy: #1a2244;
-      --text-muted: #8090b8;
+      --navy-mid: #22306a;
+      --navy-light: #2d3f7a;
       --white: #ffffff;
+      --off-white: #f7f4f9;
+      --text-muted: #8090b8;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--navy);
       color: var(--white);
-      line-height: 1.75;
+      overflow-x: hidden;
     }
 
+    /* ── NAV ── */
     nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.1rem 2.5rem;
-      background: rgba(26,34,68,0.95);
+      background: rgba(26, 34, 68, 0.88);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(94,200,229,0.12);
-      position: sticky; top: 0; z-index: 100;
     }
+
     .nav-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem; font-weight: 700;
-      color: var(--white); text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
     }
     .nav-logo span { color: var(--hot-pink); }
-    .nav-back {
-      color: var(--sky-blue); text-decoration: none;
-      font-size: 0.88rem; font-weight: 500;
+
+    nav ul {
+      list-style: none;
+      display: flex; gap: 2rem;
+    }
+    nav ul a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
       letter-spacing: 0.06em;
-      transition: opacity 0.2s;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
-    .nav-back:hover { opacity: 0.75; }
+    nav ul a:hover { color: var(--sky-blue); }
 
-    .page {
-      max-width: 780px;
+    .nav-cta {
+      background: var(--hot-pink);
+      color: white !important;
+      padding: 0.55rem 1.3rem;
+      border-radius: 40px;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+    .nav-cta:hover { background: #c8286a !important; transform: translateY(-1px); color: white !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-bg-circle.c1 {
+      width: 680px; height: 680px;
+      border: 1.5px solid rgba(232,57,122,0.18);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-bg-circle.c2 {
+      width: 820px; height: 820px;
+      border: 1px solid rgba(94,200,229,0.1);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-bg-glow {
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,57,122,0.07) 0%, transparent 70%);
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid var(--sky-blue);
+      color: var(--sky-blue);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.38rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 8vw, 7rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+    .hero h1 .pink { color: var(--hot-pink); }
+    .hero h1 .blue { color: var(--sky-blue); }
+
+    .hero-sub {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 480px;
+      line-height: 1.7;
+      margin: 1.6rem auto 2.6rem;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--hot-pink);
+      color: white;
+      text-decoration: none;
+      padding: 0.85rem 2.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #c8286a; transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1.5px solid var(--sky-blue);
+      color: var(--sky-blue);
+      text-decoration: none;
+      padding: 0.85rem 2.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { background: rgba(94,200,229,0.1); transform: translateY(-2px); }
+
+    /* ── SECTION SHARED ── */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 5rem 2rem 6rem;
     }
 
-    .page-label {
+    .section-label {
       font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -62,192 +191,789 @@
       margin-bottom: 0.8rem;
     }
 
-    h1 {
+    .section-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900;
-      line-height: 1.1;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .section-title .accent { color: var(--hot-pink); }
+    .section-title .blue-accent { color: var(--sky-blue); }
+
+    /* ── SERVICES ── */
+    #services { padding-top: 5rem; }
+
+    .services-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 3.5rem;
+    }
+
+    .services-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(94,200,229,0.12);
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+      transition: border-color 0.2s, transform 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--hot-pink), var(--sky-blue));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .service-card:hover {
+      border-color: rgba(232,57,122,0.3);
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.07);
+    }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: rgba(232,57,122,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-price {
+      color: var(--sky-blue);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── HOW IT WORKS ── */
+    #how-it-works {
+      background: rgba(255,255,255,0.025);
+      border-top: 1px solid rgba(94,200,229,0.08);
+      border-bottom: 1px solid rgba(94,200,229,0.08);
+      max-width: 100%;
+      padding: 6rem 2rem;
+    }
+    #how-it-works .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      border: 1.5px solid var(--hot-pink);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--hot-pink);
+      margin: 0 auto 1.2rem;
+    }
+
+    .step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .step p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* ── GIFT CARDS ── */
+    #gift-cards { max-width: 1100px; }
+
+    .gift-card-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .gift-visual {
+      background: linear-gradient(135deg, #1c2560 0%, #2a1540 100%);
+      border: 1.5px solid var(--hot-pink);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gift-visual::after {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      border: 1px solid rgba(94,200,229,0.2);
+    }
+
+    .gift-visual .gv-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sky-blue);
+    }
+
+    .gift-visual .gv-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin: 0.4rem 0 1.5rem;
+    }
+
+    .gift-visual .gv-amount {
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--hot-pink);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .gift-visual .gv-note {
+      margin-top: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .gift-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .gift-info p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .gift-amounts {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+    }
+
+    .gift-amount-pill {
+      border: 1px solid rgba(232,57,122,0.4);
+      color: var(--hot-pink);
+      padding: 0.45rem 1.1rem;
+      border-radius: 40px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* ── BOOKING ── */
+    #booking {
+      max-width: 100%;
+      background: var(--navy);
+      padding: 6rem 2rem;
+    }
+    #booking .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .booking-info p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .booking-features {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    .booking-features li {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .booking-features li::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--sky-blue);
+      flex-shrink: 0;
+    }
+
+    .booking-form-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(94,200,229,0.15);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+
+    .booking-form-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
       margin-bottom: 0.5rem;
     }
-    h1 span { color: var(--hot-pink); }
 
-    .updated {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin: 2.5rem 0 0.75rem;
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
       color: var(--white);
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s;
     }
-
-    p {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--sky-blue);
     }
+    .form-group select option { background: var(--navy); }
+    .form-group textarea { resize: vertical; min-height: 80px; }
 
-    ul {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
+    .btn-book {
+      width: 100%;
+      background: var(--hot-pink);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 40px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 0.5rem;
     }
-    ul li { margin-bottom: 0.4rem; }
+    .btn-book:hover { background: #c8286a; transform: translateY(-1px); }
 
-    .highlight-box {
-      background: rgba(94,200,229,0.06);
-      border: 1px solid rgba(94,200,229,0.2);
-      border-radius: 12px;
-      padding: 1.5rem 1.8rem;
-      margin: 2rem 0;
-    }
-    .highlight-box p { margin: 0; color: var(--white); font-size: 0.92rem; }
-    .highlight-box strong { color: var(--sky-blue); }
-
-    .stop-box {
-      background: rgba(232,57,122,0.07);
-      border: 1px solid rgba(232,57,122,0.25);
-      border-radius: 12px;
-      padding: 1.5rem 1.8rem;
-      margin: 2rem 0;
-    }
-    .stop-box p { margin: 0; color: var(--white); font-size: 0.92rem; }
-    .stop-box strong { color: var(--hot-pink); }
-
-    a { color: var(--sky-blue); }
-
+    /* ── FOOTER ── */
     footer {
-      text-align: center;
-      padding: 2.5rem;
       border-top: 1px solid rgba(255,255,255,0.07);
-      color: var(--text-muted);
-      font-size: 0.82rem;
+      padding: 3.5rem 2rem;
+      text-align: center;
     }
-    footer a { color: var(--sky-blue); text-decoration: none; }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo span { color: var(--hot-pink); }
+
+    .footer-tagline {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--sky-blue); }
+
+    .footer-copy {
+      color: rgba(128, 144, 184, 0.5);
+      font-size: 0.8rem;
+    }
+
+    /* ── REVIEWS ── */
+    #reviews {
+      background: rgba(255,255,255,0.025);
+      border-top: 1px solid rgba(94,200,229,0.08);
+      border-bottom: 1px solid rgba(94,200,229,0.08);
+      padding: 6rem 2rem;
+    }
+    .reviews-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .reviews-sub {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin: 0.5rem auto 3rem;
+      max-width: 480px;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(94,200,229,0.12);
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .review-card:hover {
+      border-color: rgba(232,57,122,0.3);
+      transform: translateY(-3px);
+    }
+    .review-stars {
+      color: var(--hot-pink);
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+    .review-text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+      flex: 1;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .review-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--hot-pink), var(--sky-blue));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+    .review-detail {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      margin-top: 0.1rem;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .services-intro { grid-template-columns: 1fr; }
+      .gift-card-wrapper { grid-template-columns: 1fr; }
+      #booking .inner { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
-    <a href="index.html" class="nav-logo">Nomad <span>Kneads</span></a>
-    <a href="index.html" class="nav-back">← Back to Home</a>
+    <div class="nav-logo">Nomad <span>Kneads</span></div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#gift-cards">Gift Cards</a></li>
+      <li><a href="#booking" class="nav-cta">Book Now</a></li>
+    </ul>
   </nav>
 
-  <div class="page">
-    <div class="page-label">Legal</div>
-    <h1>Privacy Policy & <span>SMS Terms</span></h1>
-    <p class="updated">Last updated: May 2025</p>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-circle c1"></div>
+    <div class="hero-bg-circle c2"></div>
 
-    <p>Nomad Kneads ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your personal information, including how we handle SMS communications.</p>
+    <div class="hero-tag">✦ Mobile Massage & Wellness</div>
 
-    <!-- SMS OPT-IN -->
-    <h2>SMS Messaging & Opt-In</h2>
+    <h1>
+      Wellness<br />
+      <span class="pink">Comes</span> to <span class="blue">You</span>
+    </h1>
 
-    <div class="highlight-box">
-      <p><strong>How you opt in:</strong> By providing your phone number through our booking form at nomadkneads.com, you expressly consent to receive text messages from Nomad Kneads. These messages may include appointment confirmations, reminders, follow-ups, and occasional promotional offers related to our massage and wellness services.</p>
+    <p class="hero-sub">
+      Professional massage therapy delivered to your home, office, or event. No commute, no waiting room — just pure relaxation, on your schedule.
+    </p>
+
+    <div class="hero-btns">
+      <a href="https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y" class="btn-primary" target="_blank" rel="noopener">Book a Session</a>
+      <a href="#services" class="btn-outline">View Services</a>
     </div>
-
-    <p>Message frequency will vary based on your appointment activity and any promotions we run. You will not receive unsolicited spam — only messages relevant to your bookings or wellness updates from Nomad Kneads.</p>
-
-    <p>Message and data rates may apply depending on your mobile carrier and plan.</p>
-
-    <div class="stop-box">
-      <p><strong>To opt out:</strong> Reply <strong>STOP</strong> to any text message from us at any time to unsubscribe. You will receive one final confirmation message and will not receive further texts. You can also reply <strong>HELP</strong> for assistance or contact us directly at <a href="mailto:hello@nomadkneads.com">hello@nomadkneads.com</a>.</p>
-    </div>
-
-    <p>We will never sell, share, or transfer your phone number to third parties for their marketing purposes.</p>
-
-    <h2>Data Security</h2>
-    <p>We maintain internal access controls, staff training, and security safeguards to prevent unauthorized access, use, or disclosure of customer data.</p>
-
-    <!-- GRASSHOPPER REQUIRED LANGUAGE -->
-    <h2>Data Sharing</h2>
-    <ul>
-      <li>Customer data is not shared with 3rd parties for promotional or marketing purposes.</li>
-      <li>Mobile opt-in and consent are never shared with anyone for any purpose. Any information sharing that may be mentioned elsewhere in this policy excludes mobile opt-in data.</li>
-    </ul>
-
-    <h2>Nomad Kneads Messaging Terms and Conditions</h2>
-    <ol style="color: var(--text-muted); font-size: 0.95rem; padding-left: 1.5rem; margin-bottom: 1rem;">
-      <li style="margin-bottom: 0.75rem;">The messaging program consists of general conversational messaging to answer questions and provide support to customers.</li>
-      <li style="margin-bottom: 0.75rem;">You can cancel the SMS service at any time. Just text 'STOP' to the phone number from which you received messages. After you send the SMS message 'STOP' to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.</li>
-      <li style="margin-bottom: 0.75rem;">If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly at <a href="mailto:Kara@nomadkneads.com">Kara@nomadkneads.com</a>.</li>
-      <li style="margin-bottom: 0.75rem;">Carriers are not liable for delayed or undelivered messages.</li>
-      <li style="margin-bottom: 0.75rem;">As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency will vary based on communication needs. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.</li>
-      <li style="margin-bottom: 0.75rem;">If you have any questions regarding privacy, please read our privacy policy contained in the rest of this document/page.</li>
-    </ol>
-
-    <!-- INFORMATION WE COLLECT -->
-    <h2>Information We Collect</h2>
-    <p>When you book an appointment or contact us, we may collect:</p>
-    <ul>
-      <li>Your name, email address, and phone number</li>
-      <li>Your service address (for mobile appointments)</li>
-      <li>Appointment preferences and health notes you choose to share</li>
-      <li>Payment information (processed securely through Square — we do not store card details)</li>
-    </ul>
-
-    <!-- HOW WE USE IT -->
-    <h2>How We Use Your Information</h2>
-    <p>We use your information to:</p>
-    <ul>
-      <li>Schedule, confirm, and remind you of appointments</li>
-      <li>Process payments securely through Square</li>
-      <li>Send you relevant updates about your bookings</li>
-      <li>Send occasional promotional messages (SMS only if you have opted in)</li>
-      <li>Improve our services based on your feedback</li>
-    </ul>
-
-    <!-- SHARING -->
-    <h2>Sharing Your Information</h2>
-    <p>We do not sell or rent your personal information to anyone. We only share your information with trusted third-party services that help us operate our business, specifically:</p>
-    <ul>
-      <li><strong>Square</strong> — for appointment booking and payment processing</li>
-      <li><strong>Grasshopper</strong> — for business SMS communications</li>
-    </ul>
-    <p>These providers have their own privacy policies and are contractually required to protect your data.</p>
-
-    <!-- PAYMENTS -->
-    <h2>Payment Security</h2>
-    <p>All payments are processed through Square. We do not store your credit card number or payment details on our systems. Square is PCI-DSS compliant and uses industry-standard encryption to protect your payment information.</p>
-
-    <!-- DATA RETENTION -->
-    <h2>Data Retention</h2>
-    <p>We retain your contact and appointment information for as long as necessary to provide our services and comply with applicable laws. You may request deletion of your personal information at any time by contacting us.</p>
-
-    <!-- YOUR RIGHTS -->
-    <h2>Your Rights</h2>
-    <p>You have the right to:</p>
-    <ul>
-      <li>Request access to the personal information we hold about you</li>
-      <li>Request correction of inaccurate information</li>
-      <li>Request deletion of your personal information</li>
-      <li>Opt out of SMS communications at any time by replying STOP</li>
-    </ul>
-
-    <!-- CONTACT -->
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy or how we handle your information, please contact us:</p>
-    <ul>
-      <li>Email: <a href="mailto:hello@nomadkneads.com">hello@nomadkneads.com</a></li>
-      <li>Website: <a href="https://nomadkneads.com">nomadkneads.com</a></li>
-    </ul>
-
-    <!-- CHANGES -->
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. Continued use of our services after changes are posted constitutes your acceptance of the updated policy.</p>
-
   </div>
 
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-intro">
+      <div>
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-title">Every Session <span class="accent">Tailored</span> to You</h2>
+      </div>
+      <p class="services-desc">
+        Each massage is customized to your needs, whether you're seeking deep relief, total relaxation, or recovery support. All sessions take place at your chosen location.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🌊</div>
+        <div class="service-name">Swedish Massage</div>
+        <p class="service-desc">Gentle, flowing strokes to melt away tension and improve circulation. Perfect for relaxation and stress relief.</p>
+        <div class="service-price">60 min · 90 min · 120 min</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <div class="service-name">Deep Tissue</div>
+        <p class="service-desc">Targeted pressure to release chronic muscle tension and knots. Ideal for athletes and those with persistent pain.</p>
+        <div class="service-price">60 min · 90 min · 120 min</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤰</div>
+        <div class="service-name">Prenatal Massage</div>
+        <p class="service-desc">Safe, specialized therapy designed for expectant mothers to relieve discomfort and promote wellbeing. Available for 2nd and 3rd trimester only.</p>
+        <div class="service-price">60 min · 90 min</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <div class="service-name">Sports Recovery</div>
+        <p class="service-desc">Targeted techniques to boost recovery, enhance performance, and keep you moving at your best after training or events.</p>
+        <div class="service-price">60 min · 90 min · 120 min</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🪨</div>
+        <div class="service-name">Hot Stone Massage</div>
+        <p class="service-desc">Smooth heated stones are used to relax muscles deeply and improve energy flow — deeply grounding and indulgent.</p>
+        <div class="service-price">90 min · 120 min</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎉</div>
+        <div class="service-name">Events & Parties</div>
+        <p class="service-desc">Chair massage stations or full setups for corporate events, bachelorette parties, wellness days, and more.</p>
+        <div class="service-price">Contact for pricing</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <div id="how-it-works">
+    <div class="inner">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title">How It <span class="blue-accent">Works</span></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Choose Your Service</h3>
+          <p>Pick the massage style, duration, and any add-ons that fit your needs and budget.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Book & Pay Online</h3>
+          <p>Select your date and time, enter your location, and securely complete payment to confirm.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>We Come to You</h3>
+          <p>Your therapist arrives with everything needed — table, linens, music, and ambiance included.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Relax & Recover</h3>
+          <p>Enjoy a fully customized session without leaving the comfort of your own space.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING -->
+  <div id="booking">
+    <div class="inner">
+      <div class="booking-info">
+        <div class="section-label">Ready to Relax?</div>
+        <h2 class="section-title">Book Your <span class="accent">Session</span></h2>
+        <p>Fill out the form and we'll confirm your appointment within a few hours. All sessions require a deposit at time of booking.</p>
+        <ul class="booking-features">
+          <li>We travel to your home, office, or workplace</li>
+          <li>Fully equipped — table, linens, and supplies included</li>
+          <li>Secure payment powered by Square</li>
+          <li>Easy rescheduling up to 24 hours before</li>
+          <li>Gift cards redeemable at checkout</li>
+        </ul>
+      </div>
+
+      <div class="booking-form-card">
+        <h3>Book Your Session</h3>
+
+        <!-- Start Square Appointments Embed Code -->
+        <script src='https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y.js'></script>
+        <!-- End Square Appointments Embed Code -->
+
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">Prefer to open in a new tab?</p>
+          <a style="background-color: var(--hot-pink); color: white; height: 40px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; letter-spacing: 1px; line-height: 38px; padding: 0 28px; border-radius: 40px; font-weight: 500; font-size: 14px; cursor: pointer; display: inline-block; text-decoration: none;" href="https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y">Book an appointment</a>
+        </div>
+
+        <!-- SMS OPT-IN FORM - Required for 10DLC registration -->
+        <div style="margin-top:2rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.8rem;">
+          <p style="font-size:0.82rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.2rem;">Stay in Touch / SMS Updates</p>
+
+          <div style="display:grid; gap:0.85rem; margin-bottom:1.2rem;">
+            <input type="text" placeholder="Name" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:white; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
+            <input type="email" placeholder="Email" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:white; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
+            <input type="tel" placeholder="Phone Number" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:white; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
+            <input type="text" placeholder="Message (optional)" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:white; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
+          </div>
+
+          <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.7; margin-bottom:1rem;">
+            Nomad Kneads would like your consent to send informational text message communications from +17708021826 to your mobile number listed above, in response to your questions or to provide information relevant to your relationship with us.
+          </p>
+          <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.7; margin-bottom:1.2rem;">
+            Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply 'STOP' to unsubscribe at any time. Reply 'HELP' for assistance or more information. We do not share your mobile opt-in information with anyone. See our privacy policy and messaging terms and conditions at <a href="https://nomadkneads.com/privacy.html" style="color:var(--sky-blue);">nomadkneads.com/privacy.html</a> for more information.
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:0.6rem; margin-bottom:1.4rem;">
+            <label style="display:flex; align-items:flex-start; gap:0.7rem; cursor:pointer; font-size:0.85rem; color:var(--white);">
+              <input type="radio" name="sms_consent" value="yes" style="margin-top:3px; accent-color:var(--hot-pink);" />
+              Yes, I consent to receive appointment reminders, booking confirmations, and promotional messages from Nomad Kneads. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, reply HELP for help.
+            </label>
+            <label style="display:flex; align-items:flex-start; gap:0.7rem; cursor:pointer; font-size:0.85rem; color:var(--text-muted);">
+              <input type="radio" name="sms_consent" value="no" style="margin-top:3px; accent-color:var(--hot-pink);" />
+              No, I do not want to receive any text messages from Nomad Kneads
+            </label>
+          </div>
+
+          <button class="btn-book">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div id="reviews">
+    <div class="reviews-inner">
+      <div class="section-label" style="text-align:center;">Client Love</div>
+      <h2 class="section-title" style="text-align:center;">What People Are <span class="accent">Saying</span></h2>
+      <p class="reviews-sub">Real words from real clients who let Kara bring the table to them.</p>
+
+      <div class="reviews-grid">
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Kara is absolutely incredible. I've had massages at fancy spas and nothing compares to the experience she provides in the comfort of my own home. She's intuitive, skilled, and genuinely cares about how you feel when you leave. I'm a client for life."</p>
+          <div class="review-author">
+            <div class="review-avatar">SM</div>
+            <div>
+              <div class="review-name">Sarah M.</div>
+              <div class="review-detail">Deep Tissue · Atlanta, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I booked Kara for a bachelorette party and she was an absolute hit. Every single one of my girls said it was the best part of the whole weekend. Professional, warm, and so talented. We're already planning to book her again."</p>
+          <div class="review-author">
+            <div class="review-avatar">JL</div>
+            <div>
+              <div class="review-name">Jessica L.</div>
+              <div class="review-detail">Event Booking · Decatur, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"As someone who's been dealing with chronic back pain for years, finding Kara was a game changer. She really listened to what I needed and targeted exactly the right spots. The fact that she comes to me makes it so easy to actually keep up with my sessions."</p>
+          <div class="review-author">
+            <div class="review-avatar">TR</div>
+            <div>
+              <div class="review-name">Tyler R.</div>
+              <div class="review-detail">Deep Tissue · Regular Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I got a prenatal massage from Kara during my third trimester and it was pure heaven. She made me feel completely safe and comfortable the whole time. I cried a little after because I felt so good — in the best way possible. 10 out of 10."</p>
+          <div class="review-author">
+            <div class="review-avatar">AB</div>
+            <div>
+              <div class="review-name">Ashley B.</div>
+              <div class="review-detail">Prenatal Massage · Marietta, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Kara came to our office after a brutal week and gave the most incredible massage session for our whole team. Everyone was blown away — people were practically melting into their chairs afterward. We're making this a monthly thing for sure."</p>
+          <div class="review-author">
+            <div class="review-avatar">MK</div>
+            <div>
+              <div class="review-name">Michelle K.</div>
+              <div class="review-detail">Swedish Massage · Office Visit</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I bought a gift card for my mom's birthday and she hasn't stopped talking about how amazing Kara was. She said it was the most thoughtful gift she's ever received. Nomad Kneads gift cards are my go-to for every occasion now."</p>
+          <div class="review-author">
+            <div class="review-avatar">DN</div>
+            <div>
+              <div class="review-name">Dana N.</div>
+              <div class="review-detail">Gift Card · Swedish Massage</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- GIFT CARDS -->
+  <section id="gift-cards">
+    <div class="section-label">Give the Gift of Wellness</div>
+    <h2 class="section-title">Gift Cards <span class="accent">Available</span></h2>
+
+    <div class="gift-card-wrapper">
+      <div class="gift-visual">
+        <div class="gv-label">✦ Nomad Kneads</div>
+        <div class="gv-name">Gift Card</div>
+        <div class="gv-amount">$100</div>
+        <div class="gv-note">Mobile Massage & Wellness · Valid for any service</div>
+      </div>
+
+      <div class="gift-info">
+        <h3>The perfect gift for anyone who deserves a little relief.</h3>
+        <p>Nomad Kneads gift cards can be redeemed for any massage service or session length. They never expire, and can be sent digitally in minutes.</p>
+        <div class="gift-amounts">
+          <span class="gift-amount-pill">$50</span>
+          <span class="gift-amount-pill">$75</span>
+          <span class="gift-amount-pill">$100</span>
+          <span class="gift-amount-pill">$150</span>
+          <span class="gift-amount-pill">Custom</span>
+        </div>
+        <a href="https://app.squareup.com/gift/MLS33NHF0WFSE/order" class="btn-primary" target="_blank" rel="noopener">Purchase a Gift Card via Square</a>
+        <p style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-muted);">
+          You'll get your digital gift card instantly by email — redeemable when booking any service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Nomad Kneads · Mobile Massage & Wellness · <a href="index.html">Back to Home</a></p>
+    <div class="footer-logo">Nomad <span>Kneads</span></div>
+    <div class="footer-tagline">Mobile Massage & Wellness</div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#gift-cards">Gift Cards</a>
+      <a href="#booking">Book Now</a>
+      <a href="mailto:hello@nomadkneads.com">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copy">© 2025 Nomad Kneads · All rights reserved</div>
   </footer>
 
 </body>
