@@ -280,6 +280,46 @@
       letter-spacing: 0.04em;
     }
 
+    .price-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-top: 0.2rem;
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .price-duration {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .price-amount {
+      color: var(--sky-blue);
+      font-weight: 600;
+    }
+
+    .price-addon-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--hot-pink);
+      opacity: 0.8;
+      margin-top: 0.6rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .price-divider {
+      border: none;
+      border-top: 1px solid rgba(94,200,229,0.1);
+      margin: 0.5rem 0;
+    }
+
     /* HOW IT WORKS */
     #how-it-works {
       background: rgba(255,255,255,0.025);
@@ -704,35 +744,50 @@
         <div class="service-icon">🌊</div>
         <div class="service-name">Swedish Massage</div>
         <p class="service-desc">Gentle, flowing strokes to melt away tension and improve circulation. Perfect for relaxation and stress relief.</p>
-        <div class="service-price">60 min &middot; 90 min</div>
+        <div class="price-row">
+          <div class="price-item"><span class="price-duration">60 min</span><span class="price-amount">$130</span></div>
+          <div class="price-item"><span class="price-duration">90 min</span><span class="price-amount">$150</span></div>
+        </div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🔥</div>
         <div class="service-name">Deep Tissue</div>
         <p class="service-desc">Targeted pressure to release chronic muscle tension and knots. Ideal for athletes and those with persistent pain.</p>
-        <div class="service-price">60 min &middot; 90 min</div>
+        <div class="price-row">
+          <div class="price-item"><span class="price-duration">60 min</span><span class="price-amount">$140</span></div>
+          <div class="price-item"><span class="price-duration">90 min</span><span class="price-amount">$160</span></div>
+        </div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">😮</div>
         <div class="service-name">TMJ Massage</div>
         <p class="service-desc">Specialized intraoral and facial massage to relieve jaw tension, headaches, and TMJ dysfunction. A targeted treatment for anyone dealing with jaw pain or teeth grinding.</p>
-        <div class="service-price">60 min &middot; 90 min</div>
+        <div class="price-row">
+          <div class="price-addon-label">Add-on to any session</div>
+          <div class="price-item"><span class="price-duration">Add-on</span><span class="price-amount">+$25</span></div>
+        </div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">⚡</div>
         <div class="service-name">Sports Recovery</div>
         <p class="service-desc">Targeted techniques to boost recovery, enhance performance, and keep you moving at your best after training or events.</p>
-        <div class="service-price">60 min &middot; 90 min</div>
+        <div class="price-row">
+          <div class="price-item"><span class="price-duration">60 min</span><span class="price-amount">$150</span></div>
+          <div class="price-item"><span class="price-duration">90 min</span><span class="price-amount">$170</span></div>
+        </div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🦶</div>
         <div class="service-name">Reflexology</div>
         <p class="service-desc">Targeted pressure applied to specific points on the feet and hands that correspond to organs and systems throughout the body. Deeply relaxing and great for overall wellness.</p>
-        <div class="service-price">60 min &middot; 90 min</div>
+        <div class="price-row">
+          <div class="price-addon-label">Add-on to any session</div>
+          <div class="price-item"><span class="price-duration">Add-on</span><span class="price-amount">+$30</span></div>
+        </div>
       </div>
 
       <div class="service-card">
@@ -838,91 +893,6 @@
     </div>
   </div>
 
-  <!-- REVIEWS -->
-  <div id="reviews">
-    <div class="reviews-inner">
-      <div class="section-label" style="text-align:center;">Client Love</div>
-      <h2 class="section-title" style="text-align:center;">What People Are <span class="accent">Saying</span></h2>
-      <p class="reviews-sub">Real words from real clients who let Kara bring the table to them.</p>
-
-      <div class="reviews-grid">
-
-        <div class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"Kara is absolutely incredible. I've had massages at fancy spas and nothing compares to the experience she provides in the comfort of my own home. She's intuitive, skilled, and genuinely cares about how you feel when you leave. I'm a client for life."</p>
-          <div class="review-author">
-            <div class="review-avatar">SM</div>
-            <div>
-              <div class="review-name">Sarah M.</div>
-              <div class="review-detail">Deep Tissue &middot; Atlanta, GA</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"I booked Kara for a bachelorette party and she was an absolute hit. Every single one of my girls said it was the best part of the whole weekend. Professional, warm, and so talented. We're already planning to book her again."</p>
-          <div class="review-author">
-            <div class="review-avatar">JL</div>
-            <div>
-              <div class="review-name">Jessica L.</div>
-              <div class="review-detail">Event Booking &middot; Decatur, GA</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"As someone who's been dealing with chronic back pain for years, finding Kara was a game changer. She really listened to what I needed and targeted exactly the right spots. The fact that she comes to me makes it so easy to actually keep up with my sessions."</p>
-          <div class="review-author">
-            <div class="review-avatar">TR</div>
-            <div>
-              <div class="review-name">Tyler R.</div>
-              <div class="review-detail">Deep Tissue &middot; Regular Client</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"I got a prenatal massage from Kara during my third trimester and it was pure heaven. She made me feel completely safe and comfortable the whole time. I cried a little after because I felt so good &mdash; in the best way possible. 10 out of 10."</p>
-          <div class="review-author">
-            <div class="review-avatar">AB</div>
-            <div>
-              <div class="review-name">Ashley B.</div>
-              <div class="review-detail">Prenatal Massage &middot; Marietta, GA</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"Kara came to our office after a brutal week and gave the most incredible massage session for our whole team. Everyone was blown away &mdash; people were practically melting into their chairs afterward. We're making this a monthly thing for sure."</p>
-          <div class="review-author">
-            <div class="review-avatar">MK</div>
-            <div>
-              <div class="review-name">Michelle K.</div>
-              <div class="review-detail">Swedish Massage &middot; Office Visit</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"I bought a gift card for my mom's birthday and she hasn't stopped talking about how amazing Kara was. She said it was the most thoughtful gift she's ever received. Nomad Kneads gift cards are my go-to for every occasion now."</p>
-          <div class="review-author">
-            <div class="review-avatar">DN</div>
-            <div>
-              <div class="review-name">Dana N.</div>
-              <div class="review-detail">Gift Card &middot; Swedish Massage</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
   <!-- GIFT CARDS -->
   <section id="gift-cards">
     <div class="section-label">Give the Gift of Wellness</div>
@@ -953,6 +923,91 @@
       </div>
     </div>
   </section>
+
+  <!-- REVIEWS -->
+  <div id="reviews">
+    <div class="reviews-inner">
+      <div class="section-label" style="text-align:center;">Client Love</div>
+      <h2 class="section-title" style="text-align:center;">What People Are <span class="accent">Saying</span></h2>
+      <p class="reviews-sub">Real words from real clients who let Kara bring the table to them.</p>
+
+      <div class="reviews-grid">
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"I was honestly a little skeptical about having someone come to my house but Kara made it the most comfortable experience. My shoulders had been wrecked for weeks and after one session I finally slept through the night. Already booked my next one."</p>
+          <div class="review-author">
+            <div class="review-avatar">SM</div>
+            <div>
+              <div class="review-name">Sarah M.</div>
+              <div class="review-detail">Deep Tissue &middot; Atlanta, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Booked Kara for my bachelorette and she was seriously the highlight. She worked through like 8 of us and everyone kept saying how good she was. My MOH already texted her for her own appointment lol. 10/10 would book again."</p>
+          <div class="review-author">
+            <div class="review-avatar">JL</div>
+            <div>
+              <div class="review-name">Jessica L.</div>
+              <div class="review-detail">Event Booking &middot; Decatur, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"I've had a lot of massages over the years for my back and most therapists just go through the motions. Kara actually asked questions, listened, and spent real time on the areas that needed it. Genuinely the best I've felt in months. She's got a regular client now."</p>
+          <div class="review-author">
+            <div class="review-avatar">TR</div>
+            <div>
+              <div class="review-name">Tyler R.</div>
+              <div class="review-detail">Deep Tissue &middot; Regular Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"33 weeks pregnant and my hips were killing me. Kara was so knowledgeable about prenatal positioning and I felt completely safe the whole time. I fell asleep on the table which literally never happens to me. My husband is already asking when she can come back."</p>
+          <div class="review-author">
+            <div class="review-avatar">AB</div>
+            <div>
+              <div class="review-name">Ashley B.</div>
+              <div class="review-detail">Prenatal Massage &middot; Marietta, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"We had Kara come in for a team appreciation day and the whole office was talking about it for a week. People who never take breaks were lining up. She was professional, on time, and genuinely good at what she does. We're putting it on the calendar every quarter."</p>
+          <div class="review-author">
+            <div class="review-avatar">MK</div>
+            <div>
+              <div class="review-name">Michelle K.</div>
+              <div class="review-detail">Corporate Event &middot; Buckhead, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Got a gift card from my sister and wasn't sure what to expect. Kara showed up with everything, set up in my living room in like 5 minutes, and gave me the most relaxing hour I've had in years. I've already bought gift cards for two other people since then."</p>
+          <div class="review-author">
+            <div class="review-avatar">DN</div>
+            <div>
+              <div class="review-name">Dana N.</div>
+              <div class="review-detail">Swedish Massage &middot; Smyrna, GA</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
