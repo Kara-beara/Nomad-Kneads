@@ -12,465 +12,249 @@
       --hot-pink: #e8397a;
       --sky-blue: #5ec8e5;
       --navy: #1a2244;
-      --navy-mid: #22306a;
-      --navy-light: #2d3f7a;
       --white: #ffffff;
-      --off-white: #f7f4f9;
       --text-muted: #8090b8;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--white); }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      overflow-x: hidden;
-    }
-
-    /* NAV */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.1rem 2.5rem;
-      background: rgba(26, 34, 68, 0.92);
+      background: rgba(26,34,68,0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(94,200,229,0.12);
     }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: 0.04em;
-      text-decoration: none;
-    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.04em; }
     .nav-logo span { color: var(--hot-pink); }
+    .nav-back { text-decoration: none; color: var(--text-muted); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-back:hover { color: var(--sky-blue); }
 
-    .nav-back {
-      color: var(--sky-blue);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: color 0.2s;
-    }
-    .nav-back:hover { color: var(--white); }
-
-    /* HERO */
-    .page-hero {
+    .page-header {
       padding: 9rem 2rem 4rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 50%; transform: translateX(-50%);
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,57,122,0.06) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .page-tag {
-      display: inline-block;
-      border: 1px solid var(--sky-blue);
-      color: var(--sky-blue);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 0.38rem 1rem;
-      border-radius: 40px;
-      margin-bottom: 1.5rem;
-    }
-
-    .page-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .page-hero h1 span { color: var(--hot-pink); }
-
-    .page-hero p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      font-weight: 300;
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    .last-updated {
-      display: inline-block;
-      margin-top: 1.2rem;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-    }
-
-    /* CONTENT */
-    .content-wrap {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 3rem 2rem 6rem;
-    }
-
-    .policy-section {
-      margin-bottom: 3rem;
-      padding-bottom: 3rem;
       border-bottom: 1px solid rgba(94,200,229,0.1);
     }
-    .policy-section:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+    .page-eyebrow {
+      display: inline-block;
+      border: 1px solid rgba(94,200,229,0.4);
       color: var(--sky-blue);
-      font-weight: 500;
-      margin-bottom: 0.6rem;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 0.38rem 1rem; border-radius: 40px; margin-bottom: 1.5rem;
     }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem,5vw,3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1rem; }
+    .page-header h1 span { color: var(--hot-pink); }
+    .page-header p { color: var(--text-muted); font-size: 0.92rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+    .last-updated { display: inline-block; margin-top: 1.2rem; font-size: 0.78rem; color: var(--text-muted); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 0.3rem 0.9rem; border-radius: 40px; }
 
-    .policy-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      line-height: 1.2;
-    }
-
-    .policy-section p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-    .policy-section p:last-child { margin-bottom: 0; }
-
-    .policy-section ul {
-      list-style: none;
-      margin: 1rem 0;
-    }
-    .policy-section ul li {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.8;
-      padding: 0.35rem 0 0.35rem 1.4rem;
-      position: relative;
-    }
-    .policy-section ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.85rem;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--sky-blue);
-    }
+    .policy-wrap { max-width: 760px; margin: 0 auto; padding: 4rem 2rem 7rem; }
 
     /* SMS highlight box */
-    .sms-highlight {
-      background: rgba(232, 57, 122, 0.07);
-      border: 1px solid rgba(232, 57, 122, 0.25);
-      border-left: 3px solid var(--hot-pink);
-      border-radius: 12px;
-      padding: 1.8rem 2rem;
-      margin: 1.5rem 0;
-    }
-    .sms-highlight h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: var(--white);
-    }
-    .sms-highlight p,
-    .sms-highlight ul li {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.9rem;
-      line-height: 1.75;
-    }
-    .sms-highlight ul { margin: 0.8rem 0; }
-    .sms-highlight ul li::before { background: var(--hot-pink); }
-
-    .info-box {
-      background: rgba(94,200,229,0.06);
-      border: 1px solid rgba(94,200,229,0.2);
-      border-radius: 12px;
-      padding: 1.5rem 2rem;
-      margin: 1.5rem 0;
-    }
-    .info-box p {
-      margin: 0;
-      font-size: 0.9rem;
-    }
-
-    /* Contact */
-    .contact-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(94,200,229,0.15);
+    .sms-box {
+      background: rgba(232,57,122,0.07);
+      border: 1.5px solid rgba(232,57,122,0.35);
       border-radius: 16px;
       padding: 2rem;
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
+      margin-bottom: 3.5rem;
     }
-    .contact-card a {
-      color: var(--sky-blue);
-      text-decoration: none;
-    }
-    .contact-card a:hover { text-decoration: underline; }
-    .contact-card p { margin: 0; }
+    .sms-box-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--hot-pink); font-weight: 500; margin-bottom: 0.6rem; }
+    .sms-box h2 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 1.1rem; }
+    .sms-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .sms-box ul li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; }
+    .sms-box ul li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--hot-pink); flex-shrink: 0; margin-top: 7px; }
+    .sms-box ul li strong { color: var(--white); }
+    .sms-box a { color: var(--sky-blue); text-decoration: none; }
 
-    /* FOOTER */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
+    /* Sections */
+    .ps { margin-bottom: 2.8rem; padding-bottom: 2.8rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .ps:last-child { border-bottom: none; margin-bottom: 0; }
+    .ps-num { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sky-blue); font-weight: 500; margin-bottom: 0.5rem; }
+    .ps h2 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+    .ps p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.8; margin-bottom: 0.85rem; }
+    .ps p:last-child { margin-bottom: 0; }
+    .ps a { color: var(--sky-blue); text-decoration: none; }
+    .ps a:hover { opacity: 0.75; }
+    .ps ul { list-style: none; margin: 0.5rem 0 0.85rem; }
+    .ps ul li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.92rem; color: var(--text-muted); padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); line-height: 1.65; }
+    .ps ul li:last-child { border-bottom: none; }
+    .ps ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--sky-blue); flex-shrink: 0; margin-top: 8px; }
+    .ps ul li strong { color: var(--white); }
+
+    .contact-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(94,200,229,0.15); border-radius: 14px; padding: 1.5rem 1.8rem; margin-top: 1rem; }
+
+    footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 3rem 2rem; text-align: center; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
     .footer-logo span { color: var(--hot-pink); }
-    .footer-tagline {
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 1.8rem;
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.8rem;
-    }
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--sky-blue); }
-    .footer-copy {
-      color: rgba(128,144,184,0.5);
-      font-size: 0.78rem;
-    }
+    .footer-copy { color: rgba(128,144,184,0.5); font-size: 0.8rem; }
 
-    @media (max-width: 640px) {
-      nav { padding: 1rem 1.2rem; }
-      .page-hero { padding: 8rem 1.2rem 3rem; }
-      .content-wrap { padding: 2rem 1.2rem 4rem; }
-      .sms-highlight { padding: 1.4rem 1.2rem; }
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .policy-wrap { padding: 3rem 1.25rem 5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="/" class="nav-logo">Nomad <span>Kneads</span></a>
-    <a href="/" class="nav-back">← Back to Home</a>
-  </nav>
+<nav>
+  <a href="index.html" class="nav-logo">Nomad <span>Kneads</span></a>
+  <a href="index.html" class="nav-back">← Back to Home</a>
+</nav>
 
-  <!-- HERO -->
-  <div class="page-hero">
-    <div class="page-tag">✦ Legal &amp; Transparency</div>
-    <h1>Privacy <span>Policy</span></h1>
-    <p>How we collect, use, and protect your personal information — including your rights around SMS communications.</p>
-    <span class="last-updated">Last updated: June 1, 2025</span>
+<div class="page-header">
+  <div class="page-eyebrow">Legal</div>
+  <h1>Privacy <span>Policy</span></h1>
+  <p>How Nomad Kneads collects, uses, and protects your personal information — including your rights regarding SMS text message communications.</p>
+  <div class="last-updated">Last updated: May 2025</div>
+</div>
+
+<div class="policy-wrap">
+
+  <!-- SMS HIGHLIGHT -->
+  <div class="sms-box">
+    <div class="sms-box-label">SMS / Text Messaging — Your Rights</div>
+    <h2>Text Message Consent & Opt-Out Information</h2>
+    <ul>
+      <li><strong>Consent is never required to purchase.</strong> Opting in to SMS messages is never a condition of booking any service with Nomad Kneads.</li>
+      <li><strong>What you'll receive.</strong> If you opt in, message types include: appointment confirmations, appointment reminders, and occasional promotions or wellness tips.</li>
+      <li><strong>How to opt out.</strong> Reply <strong>STOP</strong> to any text message at any time. You'll receive one final confirmation and no further messages will be sent.</li>
+      <li><strong>Need help?</strong> Reply <strong>HELP</strong> to any message or email us at <a href="mailto:hello@nomadkneads.com">hello@nomadkneads.com</a>.</li>
+      <li><strong>Message &amp; data rates may apply</strong> depending on your mobile carrier plan. Message frequency varies.</li>
+      <li><strong>We never share your number.</strong> Mobile opt-in data and consent information is never sold, shared, or transferred to third parties or affiliates for marketing purposes.</li>
+    </ul>
   </div>
 
-  <!-- CONTENT -->
-  <div class="content-wrap">
-
-    <!-- 1. Overview -->
-    <div class="policy-section">
-      <div class="section-label">01 — Overview</div>
-      <h2>Who We Are</h2>
-      <p>Nomad Kneads ("we," "us," or "our") is a mobile massage and wellness service based in Atlanta, Georgia, operating at nomadkneads.com and reachable at +1 (770) 802-1826.</p>
-      <p>This Privacy Policy explains what personal information we collect, why we collect it, how we use it, and your rights regarding that information. By using our website or services, you agree to the practices described here.</p>
-    </div>
-
-    <!-- 2. Information We Collect -->
-    <div class="policy-section">
-      <div class="section-label">02 — Data Collection</div>
-      <h2>Information We Collect</h2>
-      <p>We collect information you provide directly to us, including:</p>
-      <ul>
-        <li>Name, email address, and phone number (when you book a session or contact us)</li>
-        <li>Appointment details, service preferences, and health intake information</li>
-        <li>Billing and payment information (processed securely through Square)</li>
-        <li>Communications you send us via email, phone, or our website contact forms</li>
-        <li>Mobile phone number and SMS opt-in consent (when you choose to receive text messages)</li>
-      </ul>
-      <p>We may also automatically collect certain technical data when you visit our website, such as your IP address, browser type, pages visited, and referring URLs, for analytics and security purposes.</p>
-    </div>
-
-    <!-- 3. SMS / Text Messaging — CRITICAL SECTION -->
-    <div class="policy-section">
-      <div class="section-label">03 — SMS &amp; Text Messaging</div>
-      <h2>SMS Communications &amp; Text Messaging Program</h2>
-
-      <p>Nomad Kneads operates an SMS text messaging program to communicate appointment confirmations, reminders, and occasional promotional offers. This section describes how that program works and your rights as a participant.</p>
-
-      <div class="sms-highlight">
-        <h3>📱 How You Opt In</h3>
-        <p>You provide express written consent to receive SMS messages from Nomad Kneads by submitting your mobile phone number through the opt-in form on our website at nomadkneads.com. At the point of collection, a clear opt-in disclosure is displayed explaining the nature and frequency of messages.</p>
-        <p style="margin-top:0.8rem;"><strong style="color:var(--white);">Consent is not a condition of purchase.</strong> You are not required to opt in to receive SMS messages in order to book a massage session or use any of our services.</p>
-      </div>
-
-      <div class="sms-highlight">
-        <h3>📨 Types of Messages We Send</h3>
-        <ul>
-          <li>Appointment confirmations and booking receipts</li>
-          <li>Appointment reminders (typically 24–48 hours before your session)</li>
-          <li>Rescheduling or cancellation notifications</li>
-          <li>Occasional promotional messages about new services, specials, or offers</li>
-        </ul>
-        <p style="margin-top:0.8rem;">Message frequency varies based on your appointment activity and preferences.</p>
-      </div>
-
-      <div class="sms-highlight">
-        <h3>🛑 How to Opt Out</h3>
-        <p>You may opt out of receiving SMS messages at any time by replying <strong style="color:var(--white);">STOP</strong> to any text message you receive from us. After texting STOP, you will receive one final confirmation message and no further messages will be sent unless you opt back in.</p>
-        <p style="margin-top:0.8rem;">You may also opt out by contacting us directly at <a href="mailto:hello@nomadkneads.com" style="color:var(--sky-blue);">hello@nomadkneads.com</a> or by calling +1 (770) 802-1826.</p>
-      </div>
-
-      <div class="sms-highlight">
-        <h3>❓ Help &amp; Support</h3>
-        <p>Reply <strong style="color:var(--white);">HELP</strong> to any SMS message you receive from us to get assistance. You may also contact us at <a href="mailto:hello@nomadkneads.com" style="color:var(--sky-blue);">hello@nomadkneads.com</a> or +1 (770) 802-1826.</p>
-      </div>
-
-      <div class="info-box">
-        <p><strong>Message and data rates may apply.</strong> Standard messaging and data rates from your mobile carrier may apply to messages you send and receive. Nomad Kneads is not responsible for charges from your mobile carrier.</p>
-      </div>
-
-      <p><strong style="color:var(--white);">No Sharing of SMS Opt-In Data:</strong> We do not sell, rent, share, or disclose your mobile phone number or SMS opt-in consent to third parties for their own marketing purposes. Your mobile opt-in data will not be shared with any affiliate, partner, or other organization for marketing use. The only exception is service providers who assist us in operating our SMS program (such as our SMS platform provider), and those providers are contractually required to keep your information confidential and use it only to deliver messages on our behalf.</p>
-    </div>
-
-    <!-- 4. How We Use Information -->
-    <div class="policy-section">
-      <div class="section-label">04 — Use of Data</div>
-      <h2>How We Use Your Information</h2>
-      <p>We use the information we collect to:</p>
-      <ul>
-        <li>Schedule, confirm, and manage your massage appointments</li>
-        <li>Send appointment reminders, confirmations, and follow-ups</li>
-        <li>Send SMS messages you have consented to receive</li>
-        <li>Process payments and issue receipts</li>
-        <li>Respond to your questions, requests, and feedback</li>
-        <li>Improve our services and website experience</li>
-        <li>Comply with applicable laws and regulations</li>
-      </ul>
-      <p>We do not use your personal information for automated decision-making or profiling that produces legal or similarly significant effects.</p>
-    </div>
-
-    <!-- 5. Information Sharing -->
-    <div class="policy-section">
-      <div class="section-label">05 — Sharing</div>
-      <h2>Information Sharing &amp; Disclosure</h2>
-      <p>We do not sell or rent your personal information to third parties. We may share your information in the following limited circumstances:</p>
-      <ul>
-        <li><strong style="color:var(--white);">Service Providers:</strong> We share data with trusted service providers who help us operate our business, such as Square (payment processing), our booking platform, and our SMS messaging provider. These providers are contractually bound to use your data only to provide services to us.</li>
-        <li><strong style="color:var(--white);">Legal Requirements:</strong> We may disclose your information when required by law, court order, or governmental authority.</li>
-        <li><strong style="color:var(--white);">Protection of Rights:</strong> We may disclose information to protect the safety, rights, or property of Nomad Kneads, our clients, or the public.</li>
-      </ul>
-      <p>We will never sell your mobile phone number or SMS opt-in information to any third party for marketing or any other purpose.</p>
-    </div>
-
-    <!-- 6. Data Security -->
-    <div class="policy-section">
-      <div class="section-label">06 — Security</div>
-      <h2>Data Security</h2>
-      <p>We take reasonable technical and organizational measures to protect your personal information from unauthorized access, loss, misuse, or alteration. Payment information is processed through Square's PCI-compliant systems and is never stored directly on our servers.</p>
-      <p>While we work hard to protect your information, no method of transmission over the internet or electronic storage is 100% secure. We encourage you to contact us promptly if you believe your information has been compromised.</p>
-    </div>
-
-    <!-- 7. Your Rights -->
-    <div class="policy-section">
-      <div class="section-label">07 — Your Rights</div>
-      <h2>Your Privacy Rights</h2>
-      <p>You have the right to:</p>
-      <ul>
-        <li>Request access to the personal information we hold about you</li>
-        <li>Request correction of inaccurate or incomplete information</li>
-        <li>Request deletion of your personal information (subject to legal requirements)</li>
-        <li>Opt out of SMS communications at any time by replying STOP</li>
-        <li>Opt out of promotional email communications by using the unsubscribe link in any email</li>
-      </ul>
-      <p>To exercise any of these rights, please contact us using the information in the Contact section below. We will respond to your request within a reasonable time frame.</p>
-    </div>
-
-    <!-- 8. Cookies -->
-    <div class="policy-section">
-      <div class="section-label">08 — Cookies</div>
-      <h2>Cookies &amp; Tracking</h2>
-      <p>Our website may use cookies and similar tracking technologies to improve your browsing experience and analyze site traffic. You can control cookie settings through your browser preferences. Disabling cookies may affect some features of our website.</p>
-      <p>We do not use cookies to collect sensitive personal information or to track you across third-party websites for advertising purposes.</p>
-    </div>
-
-    <!-- 9. Children -->
-    <div class="policy-section">
-      <div class="section-label">09 — Children</div>
-      <h2>Children's Privacy</h2>
-      <p>Our services are intended for adults aged 18 and older. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately and we will delete it promptly.</p>
-    </div>
-
-    <!-- 10. Changes -->
-    <div class="policy-section">
-      <div class="section-label">10 — Updates</div>
-      <h2>Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. When we make material changes, we will update the "Last Updated" date at the top of this page. We encourage you to review this policy periodically.</p>
-      <p>Continued use of our website or services after changes are posted constitutes your acceptance of the updated policy.</p>
-    </div>
-
-    <!-- 11. Contact -->
-    <div class="policy-section">
-      <div class="section-label">11 — Contact</div>
-      <h2>Contact Us</h2>
-      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, please reach out:</p>
-      <div class="contact-card">
-        <p><strong style="color:var(--white);">Nomad Kneads</strong></p>
-        <p>Atlanta, Georgia</p>
-        <p>Email: <a href="mailto:hello@nomadkneads.com">hello@nomadkneads.com</a></p>
-        <p>Phone / SMS: <a href="tel:+17708021826">+1 (770) 802-1826</a></p>
-        <p>Website: <a href="https://nomadkneads.com">nomadkneads.com</a></p>
-      </div>
-    </div>
-
+  <!-- 1 -->
+  <div class="ps">
+    <div class="ps-num">Section 01</div>
+    <h2>Who We Are</h2>
+    <p>Nomad Kneads is a licensed mobile massage therapy business serving the greater Atlanta, Georgia area. We provide in-home, in-office, and event massage therapy services.</p>
+    <p>This Privacy Policy applies to information collected through our website at <a href="https://nomadkneads.com">nomadkneads.com</a>, through our online booking system (powered by Square), through our SMS opt-in form, and through any direct communications you initiate with us.</p>
+    <p>By using our website or submitting your information to us, you agree to the terms of this Privacy Policy.</p>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">Nomad <span>Kneads</span></div>
-    <div class="footer-tagline">Mobile Massage &amp; Wellness</div>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/#services">Services</a>
-      <a href="/#booking">Book Now</a>
-      <a href="mailto:hello@nomadkneads.com">Contact</a>
-      <a href="/privacy.html">Privacy Policy</a>
+  <!-- 2 -->
+  <div class="ps">
+    <div class="ps-num">Section 02</div>
+    <h2>Information We Collect</h2>
+    <p>We only collect information you voluntarily provide. This includes information submitted when you book a session, complete a health intake form, opt in to SMS communications, or contact us directly.</p>
+    <ul>
+      <li><strong>Contact information</strong> — your name, email address, phone number, and service location</li>
+      <li><strong>Health history</strong> — medical conditions, medications, and related details provided on your intake form to ensure safe and effective treatment</li>
+      <li><strong>Booking details</strong> — appointment dates and times, services selected, and payment records processed securely through Square</li>
+      <li><strong>SMS consent data</strong> — your mobile phone number and opt-in status when you choose to receive text communications</li>
+      <li><strong>Communications</strong> — messages you send us through email, text, or our website contact form</li>
+    </ul>
+    <p>We do not collect any information automatically beyond standard server logs, and we do not use tracking pixels, behavioral advertising, or third-party analytics that share your data.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="ps">
+    <div class="ps-num">Section 03</div>
+    <h2>How We Use Your Information</h2>
+    <p>Your information is used solely to operate our business and serve you. We use it to:</p>
+    <ul>
+      <li>Book, confirm, manage, and send reminders for your appointments</li>
+      <li>Deliver safe, personalized massage therapy based on your health history</li>
+      <li>Send appointment confirmations and reminders via email or SMS (if opted in)</li>
+      <li>Send occasional promotional messages about services or specials — only to clients who have explicitly opted in to SMS communications</li>
+      <li>Process payments securely through our Square booking platform</li>
+      <li>Respond to inquiries, questions, and service requests</li>
+      <li>Comply with applicable legal and professional licensing obligations</li>
+    </ul>
+    <p>We do not use your personal information for any purpose beyond what is described above without first obtaining your explicit consent.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="ps">
+    <div class="ps-num">Section 04</div>
+    <h2>SMS Text Messaging — Full Disclosure</h2>
+    <p>Nomad Kneads operates an SMS messaging program to communicate with clients who have explicitly opted in. The following disclosures apply to all SMS communications:</p>
+    <ul>
+      <li><strong>Program description:</strong> Clients who opt in will receive text messages from Nomad Kneads including appointment confirmations, reminders, and occasional promotional messages about services and wellness tips.</li>
+      <li><strong>Opt-in method:</strong> Consent is collected through a checkbox form on our website at nomadkneads.com. The checkbox is unchecked by default and must be actively selected by the user.</li>
+      <li><strong>Consent is not a condition of purchase:</strong> You are not required to opt in to receive SMS messages in order to book or receive any service.</li>
+      <li><strong>Message frequency:</strong> Varies based on appointment activity. Typically 1–4 messages per month.</li>
+      <li><strong>Message &amp; data rates:</strong> Standard message and data rates may apply depending on your carrier and plan.</li>
+      <li><strong>How to opt out:</strong> Reply STOP at any time. You will receive one final confirmation message and no further texts will be sent.</li>
+      <li><strong>How to get help:</strong> Reply HELP or contact hello@nomadkneads.com.</li>
+      <li><strong>No third-party sharing:</strong> Mobile opt-in information, phone numbers, and consent data are never sold, shared, rented, or transferred to any third party or affiliate for marketing or any other purpose.</li>
+    </ul>
+  </div>
+
+  <!-- 5 -->
+  <div class="ps">
+    <div class="ps-num">Section 05</div>
+    <h2>How We Share Your Information</h2>
+    <p>We do not sell, rent, or trade your personal information. We only share information in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Square (payment processor)</strong> — your booking and payment data is processed through Square's secure platform, subject to Square's own privacy policy</li>
+      <li><strong>Legal compliance</strong> — if required by law, court order, or governmental authority</li>
+      <li><strong>Business protection</strong> — to protect the rights, property, or safety of Nomad Kneads or its clients, where permitted by law</li>
+    </ul>
+    <p>Under no circumstances is your mobile phone number or SMS opt-in data shared with, sold to, or used by any third party for marketing purposes.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="ps">
+    <div class="ps-num">Section 06</div>
+    <h2>Data Retention & Security</h2>
+    <p>We retain client records, including health intake forms and booking history, for as long as necessary to provide services and comply with professional and legal obligations for licensed massage therapists in the state of Georgia.</p>
+    <p>We implement reasonable technical and organizational measures to protect your information from unauthorized access, disclosure, or loss. Payment information is processed and stored securely by Square and is never stored on our own systems.</p>
+    <p>To request deletion of your personal data, please contact us at the address below.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="ps">
+    <div class="ps-num">Section 07</div>
+    <h2>Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Request access to the personal information we hold about you</li>
+      <li>Request correction of inaccurate information</li>
+      <li>Request deletion of your personal information, subject to legal retention requirements</li>
+      <li>Opt out of SMS communications at any time by replying STOP</li>
+      <li>Withdraw consent for any other communications by contacting us directly</li>
+    </ul>
+    <p>To exercise any of these rights, contact us using the information below. We will respond within a reasonable timeframe.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="ps">
+    <div class="ps-num">Section 08</div>
+    <h2>Children's Privacy</h2>
+    <p>Our services are intended for adults aged 18 and older, or minors accompanied by a parent or guardian who provides consent. We do not knowingly collect personal information from children under 13. If you believe a child has submitted information to us, please contact us immediately so we can remove it.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="ps">
+    <div class="ps-num">Section 09</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. The "Last updated" date at the top of this page will reflect any changes. Continued use of our website or services after a policy update constitutes acceptance of the revised policy.</p>
+    <p>We encourage you to review this page periodically. For significant changes, we will make reasonable efforts to notify active clients.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="ps">
+    <div class="ps-num">Section 10</div>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, your personal data, or your SMS opt-in status, please contact us:</p>
+    <div class="contact-box">
+      <p style="margin-bottom:0.5rem;"><strong style="color:white;">Nomad Kneads</strong></p>
+      <p style="margin-bottom:0.4rem;">Mobile Massage &amp; Wellness &mdash; Atlanta, GA</p>
+      <p style="margin-bottom:0.4rem;">Email: <a href="mailto:hello@nomadkneads.com" style="color:var(--sky-blue);">hello@nomadkneads.com</a></p>
+      <p style="margin-bottom:0.4rem;">Phone/SMS: <a href="tel:+17708021826" style="color:var(--sky-blue);">+1 (770) 802-1826</a></p>
+      <p style="margin-bottom:0;">Website: <a href="https://nomadkneads.com" style="color:var(--sky-blue);">nomadkneads.com</a></p>
     </div>
-    <div class="footer-copy">© 2025 Nomad Kneads · All rights reserved</div>
-  </footer>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Nomad <span>Kneads</span></div>
+  <div class="footer-copy">&copy; 2025 Nomad Kneads &middot; All rights reserved &middot; <a href="index.html" style="color:var(--text-muted); text-decoration:none;">Back to Home</a></div>
+</footer>
 
 </body>
 </html>
