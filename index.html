@@ -9,14 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --hot-pink: #e8397a;
-      --sky-blue: #5ec8e5;
-      --navy: #1a2244;
-      --navy-mid: #22306a;
-      --navy-light: #2d3f7a;
-      --white: #ffffff;
-      --off-white: #f7f4f9;
-      --text-muted: #8090b8;
+      --hot-pink: #d63f6e;
+      --sky-blue: #2e8b7a;
+      --navy: #faf8f4;
+      --navy-mid: #ffffff;
+      --navy-light: #f0ece6;
+      --white: #1a1a1a;
+      --off-white: #faf8f4;
+      --text-muted: #555555;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -35,16 +35,16 @@
       position: fixed; top: 0; width: 100%; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.1rem 2.5rem;
-      background: rgba(26, 34, 68, 0.88);
+      background: rgba(250, 248, 244, 0.88);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(94,200,229,0.12);
+      border-bottom: 1px solid rgba(46,139,122,0.12);
     }
 
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
       font-weight: 700;
-      color: var(--white);
+      color: #1a1a1a;
       letter-spacing: 0.04em;
     }
     .nav-logo span { color: var(--hot-pink); }
@@ -55,23 +55,23 @@
     }
     nav ul a {
       text-decoration: none;
-      color: var(--text-muted);
+      color: #444444;
       font-size: 0.88rem;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       transition: color 0.2s;
     }
-    nav ul a:hover { color: var(--sky-blue); }
+    nav ul a:hover { color: var(--hot-pink); }
 
     .nav-cta {
       background: var(--hot-pink);
-      color: white !important;
+      color: #1a1a1a !important;
       padding: 0.55rem 1.3rem;
       border-radius: 40px;
       transition: background 0.2s, transform 0.15s !important;
     }
-    .nav-cta:hover { background: #c8286a !important; transform: translateY(-1px); color: white !important; }
+    .nav-cta:hover { background: #b8325e !important; transform: translateY(-1px); color: #1a1a1a !important; }
 
     /* HERO */
     .hero {
@@ -91,13 +91,13 @@
     }
     .hero-bg-circle.c1 {
       width: 680px; height: 680px;
-      border: 1.5px solid rgba(232,57,122,0.18);
+      border: 1.5px solid rgba(214,63,110,0.18);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
     }
     .hero-bg-circle.c2 {
       width: 820px; height: 820px;
-      border: 1px solid rgba(94,200,229,0.1);
+      border: 1px solid rgba(46,139,122,0.1);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -105,7 +105,7 @@
       position: absolute;
       width: 500px; height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,57,122,0.07) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(214,63,110,0.07) 0%, transparent 70%);
       top: 50%; left: 50%; transform: translate(-50%, -50%);
       pointer-events: none;
     }
@@ -130,6 +130,7 @@
       font-weight: 900;
       line-height: 1;
       letter-spacing: -0.01em;
+      color: #1a1a1a;
       animation: fadeUp 0.7s 0.1s ease both;
     }
     .hero h1 .pink { color: var(--hot-pink); }
@@ -153,7 +154,7 @@
 
     .btn-primary {
       background: var(--hot-pink);
-      color: white;
+      color: #1a1a1a;
       text-decoration: none;
       padding: 0.85rem 2.2rem;
       border-radius: 40px;
@@ -161,7 +162,7 @@
       font-size: 0.95rem;
       transition: background 0.2s, transform 0.15s;
     }
-    .btn-primary:hover { background: #c8286a; transform: translateY(-2px); }
+    .btn-primary:hover { background: #b8325e; transform: translateY(-2px); }
 
     .btn-outline {
       border: 1.5px solid var(--sky-blue);
@@ -173,7 +174,7 @@
       font-size: 0.95rem;
       transition: background 0.2s, transform 0.15s;
     }
-    .btn-outline:hover { background: rgba(94,200,229,0.1); transform: translateY(-2px); }
+    .btn-outline:hover { background: rgba(46,139,122,0.1); transform: translateY(-2px); }
 
     /* SECTION SHARED */
     section {
@@ -187,7 +188,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--sky-blue);
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 0.8rem;
     }
 
@@ -196,6 +197,7 @@
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700;
       line-height: 1.15;
+      color: #1a1a1a;
       margin-bottom: 1rem;
     }
 
@@ -226,8 +228,8 @@
     }
 
     .service-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(94,200,229,0.12);
+      background: rgba(0,0,0,0.04);
+      border: 1px solid rgba(46,139,122,0.12);
       border-radius: 16px;
       padding: 2rem 1.8rem;
       transition: border-color 0.2s, transform 0.2s, background 0.2s;
@@ -244,16 +246,16 @@
       transition: opacity 0.2s;
     }
     .service-card:hover {
-      border-color: rgba(232,57,122,0.3);
+      border-color: rgba(214,63,110,0.3);
       transform: translateY(-4px);
-      background: rgba(255,255,255,0.07);
+      background: rgba(0,0,0,0.07);
     }
     .service-card:hover::before { opacity: 1; }
 
     .service-icon {
       width: 46px; height: 46px;
       border-radius: 12px;
-      background: rgba(232,57,122,0.12);
+      background: rgba(214,63,110,0.12);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.4rem;
       margin-bottom: 1.2rem;
@@ -263,6 +265,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
       font-weight: 700;
+      color: #1a1a1a;
       margin-bottom: 0.6rem;
     }
 
@@ -316,9 +319,9 @@
 
     /* HOW IT WORKS */
     #how-it-works {
-      background: rgba(255,255,255,0.025);
-      border-top: 1px solid rgba(94,200,229,0.08);
-      border-bottom: 1px solid rgba(94,200,229,0.08);
+      background: rgba(0,0,0,0.025);
+      border-top: 1px solid rgba(46,139,122,0.08);
+      border-bottom: 1px solid rgba(46,139,122,0.08);
       max-width: 100%;
       padding: 6rem 2rem;
     }
@@ -351,6 +354,7 @@
     .step h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
+      color: #1a1a1a;
       margin-bottom: 0.6rem;
     }
 
@@ -372,7 +376,7 @@
     }
 
     .gift-visual {
-      background: linear-gradient(135deg, #1c2560 0%, #2a1540 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #faf8f4 100%);
       border: 1.5px solid var(--hot-pink);
       border-radius: 20px;
       padding: 2.5rem;
@@ -386,7 +390,7 @@
       top: -60px; right: -60px;
       width: 200px; height: 200px;
       border-radius: 50%;
-      border: 1px solid rgba(94,200,229,0.2);
+      border: 1px solid rgba(46,139,122,0.2);
     }
 
     .gift-visual .gv-label {
@@ -419,6 +423,7 @@
     .gift-info h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
+      color: #1a1a1a;
       margin-bottom: 1rem;
     }
 
@@ -434,7 +439,7 @@
     }
 
     .gift-amount-pill {
-      border: 1px solid rgba(232,57,122,0.4);
+      border: 1px solid rgba(214,63,110,0.4);
       color: var(--hot-pink);
       padding: 0.45rem 1.1rem;
       border-radius: 40px;
@@ -470,7 +475,7 @@
     .booking-features li {
       display: flex; align-items: center; gap: 0.75rem;
       padding: 0.65rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
       font-size: 0.92rem;
       color: var(--text-muted);
     }
@@ -483,8 +488,8 @@
     }
 
     .booking-form-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(94,200,229,0.15);
+      background: rgba(0,0,0,0.04);
+      border: 1px solid rgba(46,139,122,0.15);
       border-radius: 20px;
       padding: 2.5rem;
     }
@@ -492,6 +497,7 @@
     .booking-form-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
+      color: #1a1a1a;
       margin-bottom: 1.8rem;
     }
 
@@ -517,8 +523,8 @@
     .form-group select,
     .form-group textarea {
       width: 100%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.12);
       color: var(--white);
       padding: 0.7rem 1rem;
       border-radius: 10px;
@@ -536,7 +542,7 @@
     .btn-book {
       width: 100%;
       background: var(--hot-pink);
-      color: white;
+      color: #1a1a1a;
       border: none;
       padding: 1rem;
       border-radius: 40px;
@@ -548,11 +554,11 @@
       transition: background 0.2s, transform 0.15s;
       margin-top: 0.5rem;
     }
-    .btn-book:hover { background: #c8286a; transform: translateY(-1px); }
+    .btn-book:hover { background: #b8325e; transform: translateY(-1px); }
 
     /* FOOTER */
     footer {
-      border-top: 1px solid rgba(255,255,255,0.07);
+      border-top: 1px solid rgba(0,0,0,0.08);
       padding: 3.5rem 2rem;
       text-align: center;
     }
@@ -561,12 +567,13 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
       font-weight: 700;
+      color: #1a1a1a;
       margin-bottom: 0.5rem;
     }
     .footer-logo span { color: var(--hot-pink); }
 
     .footer-tagline {
-      color: var(--text-muted);
+      color: #444444;
       font-size: 0.88rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -582,23 +589,23 @@
     }
 
     .footer-links a {
-      color: var(--text-muted);
+      color: #555555;
       text-decoration: none;
       font-size: 0.88rem;
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--sky-blue); }
+    .footer-links a:hover { color: var(--hot-pink); }
 
     .footer-copy {
-      color: rgba(128, 144, 184, 0.5);
+      color: #888888;
       font-size: 0.8rem;
     }
 
     /* REVIEWS */
     #reviews {
-      background: rgba(255,255,255,0.025);
-      border-top: 1px solid rgba(94,200,229,0.08);
-      border-bottom: 1px solid rgba(94,200,229,0.08);
+      background: rgba(0,0,0,0.025);
+      border-top: 1px solid rgba(46,139,122,0.08);
+      border-bottom: 1px solid rgba(46,139,122,0.08);
       padding: 6rem 2rem;
     }
     .reviews-inner {
@@ -618,8 +625,8 @@
       gap: 1.5rem;
     }
     .review-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(94,200,229,0.12);
+      background: rgba(0,0,0,0.04);
+      border: 1px solid rgba(46,139,122,0.12);
       border-radius: 16px;
       padding: 2rem 1.8rem;
       display: flex;
@@ -628,7 +635,7 @@
       transition: border-color 0.2s, transform 0.2s;
     }
     .review-card:hover {
-      border-color: rgba(232,57,122,0.3);
+      border-color: rgba(214,63,110,0.3);
       transform: translateY(-3px);
     }
     .review-stars {
@@ -661,6 +668,7 @@
     .review-name {
       font-weight: 500;
       font-size: 0.92rem;
+      color: #1a1a1a;
     }
     .review-detail {
       color: var(--text-muted);
@@ -687,9 +695,9 @@
     #about {
       max-width: 100%;
       padding: 6rem 2rem;
-      background: rgba(255,255,255,0.025);
-      border-top: 1px solid rgba(94,200,229,0.08);
-      border-bottom: 1px solid rgba(94,200,229,0.08);
+      background: rgba(0,0,0,0.025);
+      border-top: 1px solid rgba(46,139,122,0.08);
+      border-bottom: 1px solid rgba(46,139,122,0.08);
     }
     #about .inner {
       max-width: 1100px;
@@ -707,7 +715,7 @@
       position: absolute;
       inset: -12px;
       border-radius: 24px;
-      border: 1.5px solid rgba(232,57,122,0.2);
+      border: 1.5px solid rgba(214,63,110,0.2);
       pointer-events: none;
     }
     .about-img-wrap::after {
@@ -718,7 +726,7 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 1px solid rgba(94,200,229,0.15);
+      border: 1px solid rgba(46,139,122,0.15);
       pointer-events: none;
     }
     .about-img {
@@ -733,8 +741,8 @@
       position: absolute;
       bottom: 24px;
       left: -20px;
-      background: var(--navy-mid, #22306a);
-      border: 1px solid rgba(94,200,229,0.25);
+      background: var(--navy-mid, #ffffff);
+      border: 1px solid rgba(46,139,122,0.25);
       border-radius: 14px;
       padding: 0.75rem 1.1rem;
       display: flex;
@@ -770,8 +778,8 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      border: 1px solid rgba(94,200,229,0.2);
-      background: rgba(94,200,229,0.05);
+      border: 1px solid rgba(46,139,122,0.2);
+      background: rgba(46,139,122,0.05);
       color: var(--sky-blue);
       padding: 0.4rem 1rem;
       border-radius: 40px;
@@ -837,16 +845,16 @@
 
       <div class="about-content">
         <div class="section-label">Meet Your Therapist</div>
-        <h2>Hi, I'm Kara, <em>nice to meet you.</em></h2>
+        <h2>Hi, I'm Kara — <em>nice to meet you.</em></h2>
 
         <p class="about-body">
           I'm a Braselton local, a mom, and a licensed massage therapist who genuinely loves what I do. Growing up and raising my family here in Georgia means I'm not just your therapist. I'm your neighbor, and I take that seriously.
         </p>
         <p class="about-body">
-          I became a massage therapist because I believe everyone deserves to feel good in their body. Whether you're dealing with chronic tension, recovering from a tough training week, grinding your teeth at night, or just running on empty. I want to help. My approach is hands-on, intuitive, and always tailored to you. I'm not going through a checklist; I'm listening to what your body actually needs.
+          I became a massage therapist because I believe everyone deserves to feel good in their body. Whether you're dealing with chronic tension, recovering from a tough training week, grinding your teeth at night, or just running on empty — I want to help. My approach is hands-on, intuitive, and always tailored to you. I'm not going through a checklist; I'm listening to what your body actually needs.
         </p>
         <p class="about-body">
-          The mobile model exists because I know how hard it is to carve out time for yourself, especially as a parent. No commute, no waiting room, no rushing home after. I bring everything to you so the only thing you have to do is show up and relax.
+          The mobile model exists because I know how hard it is to carve out time for yourself — especially as a parent. No commute, no waiting room, no rushing home after. I bring everything to you so the only thing you have to do is show up and relax.
         </p>
 
         <div class="about-pills">
@@ -990,7 +998,7 @@
 
         <div style="margin-top: 1.5rem; text-align: center;">
           <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">Prefer to open in a new tab?</p>
-          <a style="background-color: var(--hot-pink); color: white; height: 40px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; letter-spacing: 1px; line-height: 38px; padding: 0 28px; border-radius: 40px; font-weight: 500; font-size: 14px; cursor: pointer; display: inline-block; text-decoration: none;" href="https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y">Book an appointment</a>
+          <a style="background-color: var(--hot-pink); color: #1a1a1a; height: 40px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; letter-spacing: 1px; line-height: 38px; padding: 0 28px; border-radius: 40px; font-weight: 500; font-size: 14px; cursor: pointer; display: inline-block; text-decoration: none;" href="https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y">Book an appointment</a>
         </div>
 
         <!-- SMS OPT-IN FORM - 10DLC Compliant -->
@@ -999,14 +1007,14 @@
           <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.2rem;">Enter your information below to receive text updates from Nomad Kneads.</p>
 
           <div style="display:grid; gap:0.85rem; margin-bottom:1.4rem;">
-            <input type="text" placeholder="Full Name" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:white; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
-            <input type="tel" placeholder="Mobile Phone Number" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:white; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
+            <input type="text" placeholder="Full Name" style="width:100%; background:rgba(0,0,0,0.04); border:1px solid rgba(255,255,255,0.1); color:#1a1a1a; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
+            <input type="tel" placeholder="Mobile Phone Number" style="width:100%; background:rgba(0,0,0,0.04); border:1px solid rgba(255,255,255,0.1); color:#1a1a1a; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
           </div>
 
           <!-- Disclosure ABOVE the checkbox - required by 10DLC -->
           <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:1rem 1.1rem; margin-bottom:1.1rem;">
             <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.85; margin-bottom:0;">
-              By checking this box, you agree to receive SMS messages from <strong style="color:white;">Nomad Kneads</strong> about <strong style="color:white;">appointment confirmations, appointment reminders, occasional promotions, and wellness tips</strong>. Message frequency varies. Message and data rates may apply. Reply <strong style="color:white;">STOP</strong> to opt out. Reply <strong style="color:white;">HELP</strong> for help. Consent is not a condition of purchase. <a href="privacy.html" style="color:var(--sky-blue);">Privacy Policy: nomadkneads.com/privacy.html</a>
+              By checking this box, you agree to receive SMS messages from <strong style="color:#1a1a1a;">Nomad Kneads</strong> about <strong style="color:#1a1a1a;">appointment confirmations, appointment reminders, occasional promotions, and wellness tips</strong>. Message frequency varies. Message and data rates may apply. Reply <strong style="color:#1a1a1a;">STOP</strong> to opt out. Reply <strong style="color:#1a1a1a;">HELP</strong> for help. Consent is not a condition of purchase. <a href="privacy.html" style="color:var(--sky-blue);">Privacy Policy: nomadkneads.com/privacy.html</a>
             </p>
           </div>
 
