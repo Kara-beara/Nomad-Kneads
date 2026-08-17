@@ -456,13 +456,13 @@
       font-weight: 500;
     }
 
-    /* BOOKING */
-    #booking {
+    /* CONTACT */
+    #contact {
       max-width: 100%;
       background: var(--navy);
       padding: 6rem 2rem;
     }
-    #booking .inner {
+    #contact .inner {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
@@ -696,7 +696,7 @@
       nav ul { display: none; }
       .services-intro { grid-template-columns: 1fr; }
       .gift-card-wrapper { grid-template-columns: 1fr; }
-      #booking .inner { grid-template-columns: 1fr; }
+      #contact .inner { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
     }
 
@@ -812,7 +812,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#gift-cards">Gift Cards</a></li>
-      <li><a href="#booking" class="nav-cta">Book Now</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 
@@ -834,7 +834,7 @@
     </p>
 
     <div class="hero-btns">
-      <a href="https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y" class="btn-primary" target="_blank" rel="noopener">Book a Session</a>
+      <a href="#contact" class="btn-primary">Contact for Booking</a>
       <a href="#services" class="btn-outline">View Services</a>
     </div>
   </div>
@@ -965,8 +965,8 @@
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <h3>Book &amp; Pay Online</h3>
-          <p>Select your date and time, enter your location, and securely complete payment to confirm.</p>
+          <h3>Reach Out to Book</h3>
+          <p>Contact us with your preferred date, time, and location, and we'll confirm availability and payment details with you directly.</p>
         </div>
         <div class="step">
           <div class="step-num">3</div>
@@ -982,52 +982,72 @@
     </div>
   </div>
 
-  <!-- BOOKING -->
-  <div id="booking">
+  <!-- CONTACT -->
+  <div id="contact">
     <div class="inner">
       <div class="booking-info">
         <div class="section-label">Ready to Relax?</div>
-        <h2 class="section-title">Book Your <span class="accent">Session</span></h2>
-        <p>Fill out the form and we'll confirm your appointment within a few hours. All sessions require a deposit at time of booking.</p>
+        <h2 class="section-title">Contact Me to <span class="accent">Book</span></h2>
+        <p>My schedule changes often, so appointments are booked directly rather than through an online calendar. Send a message with your preferred date, time, and location, and I'll reply as soon as possible to confirm.</p>
         <ul class="booking-features">
           <li>We travel to your home, office, or workplace</li>
           <li>Fully equipped &mdash; table, linens, and supplies included</li>
-          <li>Secure payment powered by Square</li>
-          <li>Easy rescheduling up to 24 hours before</li>
-          <li>Gift cards redeemable at checkout</li>
+          <li>I'll confirm availability directly with you</li>
+          <li>Payment details provided upon confirmation</li>
+          <li>Gift cards redeemable at booking</li>
         </ul>
       </div>
 
       <div class="booking-form-card">
-        <h3>Book Your Session</h3>
+        <h3>Send a Message</h3>
 
-        <!-- Start Square Appointments Embed Code -->
-        <script src='https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y.js'></script>
-        <!-- End Square Appointments Embed Code -->
-
-        <div style="margin-top: 1.5rem; text-align: center;">
-          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">Prefer to open in a new tab?</p>
-          <a style="background-color: var(--hot-pink); color: #1a1a1a; height: 40px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; letter-spacing: 1px; line-height: 38px; padding: 0 28px; border-radius: 40px; font-weight: 500; font-size: 14px; cursor: pointer; display: inline-block; text-decoration: none;" href="https://app.squareup.com/appointments/buyer/widget/36ej7h7z51rxc4/LXNJF2W7KRY5Y">Book an appointment</a>
-        </div>
-
-        <!-- SMS OPT-IN FORM - 10DLC Compliant -->
-        <div style="margin-top:2rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.8rem;">
-          <p style="font-size:0.82rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">SMS / Text Updates</p>
-          <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.2rem;">Enter your information below to receive text updates from Nomad Kneads.</p>
-
-          <div style="display:grid; gap:0.85rem; margin-bottom:1.4rem;">
-            <input type="text" placeholder="Full Name" style="width:100%; background:rgba(0,0,0,0.04); border:1px solid rgba(255,255,255,0.1); color:#1a1a1a; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
-            <input type="tel" placeholder="Mobile Phone Number" style="width:100%; background:rgba(0,0,0,0.04); border:1px solid rgba(255,255,255,0.1); color:#1a1a1a; padding:0.7rem 1rem; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none;" />
+        <form action="https://formspree.io/f/mbgrzvgy" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone</label>
+              <input type="tel" id="contact-phone" name="phone" required />
+            </div>
           </div>
 
-          <!-- Disclosure ABOVE the checkbox - required by 10DLC -->
-          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:1rem 1.1rem; margin-bottom:1.1rem;">
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-service">Service Interested In</label>
+            <select id="contact-service" name="service">
+              <option value="Swedish / Relaxation">Swedish / Relaxation</option>
+              <option value="Deep Tissue">Deep Tissue</option>
+              <option value="Sports Recovery">Sports Recovery</option>
+              <option value="TMJ Massage Add-on">TMJ Massage Add-on</option>
+              <option value="Reflexology Add-on">Reflexology Add-on</option>
+              <option value="Event / Party">Event / Party</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-preferred">Preferred Date &amp; Time</label>
+            <input type="text" id="contact-preferred" name="preferred_datetime" placeholder="e.g. Friday afternoon, or a specific date/time" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Location, any details that would help, etc." required></textarea>
+          </div>
+
+          <!-- SMS OPT-IN - 10DLC Compliant -->
+          <div style="background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.1); border-radius:10px; padding:1rem 1.1rem; margin-bottom:1.1rem;">
             <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.85; margin-bottom:0;">
               By checking this box, you agree to receive SMS messages from <strong style="color:#1a1a1a;">Nomad Kneads</strong> about <strong style="color:#1a1a1a;">appointment confirmations, appointment reminders, occasional promotions, and wellness tips</strong>. Message frequency varies. Message and data rates may apply. Reply <strong style="color:#1a1a1a;">STOP</strong> to opt out. Reply <strong style="color:#1a1a1a;">HELP</strong> for help. Consent is not a condition of purchase. <a href="privacy.html" style="color:var(--sky-blue);">Privacy Policy: nomadkneads.com/privacy.html</a>
             </p>
           </div>
 
-          <!-- Checkbox (unchecked by default) - required format -->
           <label style="display:flex; align-items:flex-start; gap:0.85rem; cursor:pointer; margin-bottom:1.4rem;">
             <input type="checkbox" name="sms_consent" value="yes" style="margin-top:3px; width:18px; height:18px; accent-color:var(--hot-pink); flex-shrink:0; cursor:pointer;" />
             <span style="font-size:0.85rem; color:var(--white); line-height:1.55;">
@@ -1035,8 +1055,8 @@
             </span>
           </label>
 
-          <button class="btn-book">Submit</button>
-        </div>
+          <button type="submit" class="btn-book">Send Message</button>
+        </form>
       </div>
     </div>
   </div>
@@ -1081,7 +1101,7 @@
       <a href="#how-it-works">How It Works</a>
       <a href="#reviews">Reviews</a>
       <a href="#gift-cards">Gift Cards</a>
-      <a href="#booking">Book Now</a>
+      <a href="#contact">Contact / Book</a>
       <a href="mailto:hello@nomadkneads.com">Contact</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
