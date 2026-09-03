@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <style>
     :root {
       --hot-pink: #d63f6e;
@@ -456,6 +457,72 @@
       font-weight: 500;
     }
 
+    /* SERVICE AREA */
+    #service-area {
+      max-width: 100%;
+      background: rgba(0,0,0,0.025);
+      border-top: 1px solid rgba(46,139,122,0.08);
+      border-bottom: 1px solid rgba(46,139,122,0.08);
+      padding: 6rem 2rem;
+    }
+    #service-area .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #service-area .section-label,
+    #service-area .section-title { justify-self: center; }
+    .service-area-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      max-width: 480px;
+      margin: 0 auto 2.8rem;
+    }
+    .map-card {
+      background: rgba(0,0,0,0.04);
+      border: 1px solid rgba(46,139,122,0.15);
+      border-radius: 20px;
+      padding: 0.9rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    #service-map {
+      width: 100%;
+      height: 360px;
+      border-radius: 14px;
+      display: block;
+    }
+    .map-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      padding: 0.9rem 0.5rem 0.2rem;
+    }
+    .map-caption .pink-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--hot-pink);
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .service-area-note {
+      margin-top: 1.6rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .service-area-note a {
+      color: var(--sky-blue);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .service-area-note a:hover { color: var(--hot-pink); }
+    .leaflet-control-attribution {
+      font-size: 9.5px !important;
+    }
+
     /* CONTACT */
     #contact {
       max-width: 100%;
@@ -811,6 +878,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#service-area">Service Area</a></li>
       <li><a href="#gift-cards">Gift Cards</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
@@ -982,6 +1050,23 @@
     </div>
   </div>
 
+  <!-- SERVICE AREA -->
+  <section id="service-area">
+    <div class="inner">
+      <div class="section-label">Coming To You</div>
+      <h2 class="section-title">Do We Cover <span class="accent">Your Area?</span></h2>
+      <p class="service-area-desc">Based in Braselton, GA, I bring the massage table to you anywhere within about 15 miles &mdash; homes, offices, and events included.</p>
+      <div class="map-card">
+        <div id="service-map" role="img" aria-label="Map showing Nomad Kneads' 15 mile service radius centered on Braselton, GA"></div>
+        <div class="map-caption">
+          <span><span class="pink-dot"></span>Braselton, GA &mdash; home base</span>
+          <span>&asymp; 15 mi radius</span>
+        </div>
+      </div>
+      <p class="service-area-note">Not sure if you're in range? <a href="#contact">Reach out</a> and I'll confirm before booking.</p>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <div id="contact">
     <div class="inner">
@@ -1099,6 +1184,7 @@
     <div class="footer-links">
       <a href="#services">Services</a>
       <a href="#how-it-works">How It Works</a>
+      <a href="#service-area">Service Area</a>
       <a href="#reviews">Reviews</a>
       <a href="#gift-cards">Gift Cards</a>
       <a href="#contact">Contact / Book</a>
@@ -1107,6 +1193,41 @@
     </div>
     <div class="footer-copy">&copy; 2025 Nomad Kneads &middot; All rights reserved</div>
   </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    (function(){
+      var el = document.getElementById('service-map');
+      if(!el || typeof L === 'undefined') return;
+
+      var HOME = [34.1098, -83.8085]; // Braselton, GA
+      var RADIUS_MILES = 15;
+      var RADIUS_METERS = RADIUS_MILES * 1609.34;
+
+      var map = L.map('service-map', {
+        scrollWheelZoom:false,
+        attributionControl:true
+      }).setView(HOME, 10);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom:18,
+        attribution:'&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      var circle = L.circle(HOME, {
+        radius: RADIUS_METERS,
+        color:'#d63f6e',
+        weight:2,
+        fillColor:'#d63f6e',
+        fillOpacity:0.12
+      }).addTo(map);
+
+      L.marker(HOME).addTo(map)
+        .bindPopup('Braselton, GA — home base');
+
+      map.fitBounds(circle.getBounds(), { padding:[10,10] });
+    })();
+  </script>
 
 </body>
 </html>
